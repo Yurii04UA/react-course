@@ -1,20 +1,21 @@
 import "./App.css";
 import * as React from "react";
-import Test from "./test/Test";
-import {  Route, Routes,Link } from "react-router-dom";
+import {  Route, Routes} from "react-router-dom";
+import AppHeader from "./pages/appHeader/AppHeader";
+import HomePage from "./pages/homePage/HomePage";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
+  
   return (
     <div className="App">
-      <h2>Heee</h2>
-      <nav>
-        <Link to="/" className="link" >Home</Link>
-        <Link to="/test">test</Link>
-      </nav>
+      <AppHeader />
       <Routes>
-        <Route path="/" element={<Test />}></Route>
+        <Route path="/" element={<HomePage />} ></Route>
         <Route path="/test" element={<h2>HEEEE</h2>}></Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
+      
     </div>
   );
 }
