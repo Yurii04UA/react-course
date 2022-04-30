@@ -1,23 +1,27 @@
-import './App.css';
+import "./App.css";
 
+const Header = () => {
+  return <h2> Hello world!!!</h2>;
+};
+const Field = () => {
+  const holder = "Enter here";
+  return <input type="text" placeholder={holder} />;
+};
+
+const Btn = () => {
+  const text = "Log in";
+  // const res = () => {
+  //   return 'Log in'
+  // }
+  const logged = true;
+  return <button>{logged ? "Enter" : text}</button>;
+};
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        
-      </header>
+      <Header />
+      <Field />
+      <Btn />
     </div>
   );
 }
