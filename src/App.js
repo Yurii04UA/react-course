@@ -1,27 +1,20 @@
 import "./App.css";
+import * as React from "react";
+import Test from "./test/Test";
+import {  Route, Routes,Link } from "react-router-dom";
 
-const Header = () => {
-  return <h2> Hello world!!!</h2>;
-};
-const Field = () => {
-  const holder = "Enter here";
-  return <input type="text" placeholder={holder} />;
-};
-
-const Btn = () => {
-  const text = "Log in";
-  // const res = () => {
-  //   return 'Log in'
-  // }
-  const logged = true;
-  return <button>{logged ? "Enter" : text}</button>;
-};
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Field />
-      <Btn />
+      <h2>Heee</h2>
+      <nav>
+        <Link to="/" className="link" >Home</Link>
+        <Link to="/test">test</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Test />}></Route>
+        <Route path="/test" element={<h2>HEEEE</h2>}></Route>
+      </Routes>
     </div>
   );
 }
