@@ -17,10 +17,10 @@ const App = () => {
         <SearchPanel />
         <AppFilter />
       </div>
+      <EmploeersList />
       
       <EmploeersAddForm />
-      <EmploeersList />
-      <EmploeersListItem />
+      
     
     </div>
   )
