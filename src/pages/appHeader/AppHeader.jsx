@@ -9,7 +9,7 @@ const AppHeader = () => {
         <NavLink to="/" className="link">Home</NavLink>
         <NavLink to="/react-course" className="link">React course</NavLink>
         <NavLink to="/training-page" className="link">Training page</NavLink>
-        <NavLink to="/test3" className="link">test</NavLink>
+        <NavLink to="/workers-page" className="link">Workers Page</NavLink>
         <NavLink to="/test4" className="link">test</NavLink>
         <NavLink to="/test5" className="link">test</NavLink>
         <NavLink to="/test6" className="link">test</NavLink>

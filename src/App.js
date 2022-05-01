@@ -5,6 +5,7 @@ import AppHeader from "./pages/appHeader/AppHeader";
 import HomePage from "./pages/homePage/HomePage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
+import WorkersPage from "./pages/WorkersPage/WorkersPage";
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} ></Route>
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
         <Route path="/training-page" element={<TrainingPage />}></Route>
+        <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       
