@@ -7,6 +7,8 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
 
+import Props from './pages/TrainingPage/Props/Props'
+
 function App() {
   
   return (
@@ -17,9 +19,11 @@ function App() {
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
         <Route path="/training-page" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
+        <Route path="/props" element={<Props />} ></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       
+     
     </div>
   );
 }
