@@ -1,13 +1,4 @@
-* {
-   box-sizing: border-box;
- }
- html, body {
-   height: 100%;
- }
- 
- 
- 
- .appCounter {
+.appCounter {
    width: 350px;
    height: 250px;
    background-color: #fff;

@@ -18,10 +18,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} ></Route>
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
-        <Route path="/training-page" element={<TrainingPage />}></Route>
+        <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
-        <Route path="/counter" element={<Counter />} ></Route>
+        <Route  path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       
