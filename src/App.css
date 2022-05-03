@@ -3,8 +3,6 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  background-color: rgb(207 204 201 / 87%);
- 
 }
 
 .link:not(:last-child) {

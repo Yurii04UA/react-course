@@ -7,7 +7,7 @@ const EmploeersList = ({ data }) => {
   const elemEmployees = data.map((item)=>{
     
     return (
-      <EmploeersListItem name={item.name} salary={item.salary} key={item.id} increase={item.increase} />  /// можно написать {...item} просто развернет весь обьект
+      <EmploeersListItem name={item.name} salary={item.salary} key={item.id} increase={item.increase} />  /// можно написать {...item} просто развернет весь обьект {name: 'Yurii'} и тд
     );
   })
   return (

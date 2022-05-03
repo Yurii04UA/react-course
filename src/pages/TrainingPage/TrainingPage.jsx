@@ -9,6 +9,7 @@ const TrainingPage = () => {
     <div className="container tr-page">
       <nav className="navBar">
         <NavLink to="/props" className="link">Props</NavLink>
+        <NavLink to="/counter" className="link">Counter</NavLink>
       </nav>
      
     </div>

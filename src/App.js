@@ -8,6 +8,7 @@ import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
 
 import Props from './pages/TrainingPage/Props/Props'
+import Counter from './pages/TrainingPage/Counter/Counter'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route path="/training-page" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
+        <Route path="/counter" element={<Counter />} ></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       
