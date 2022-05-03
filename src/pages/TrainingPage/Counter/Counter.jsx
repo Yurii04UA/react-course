@@ -23,11 +23,16 @@ class Counter extends React.Component {
   };
 
   decrease = () => {
-    return this.setState((state) => {
-      if (state.count > -50) {
-        return { count: (state.count = state.count - 1) };
-      }
-    });
+    // return this.setState((state) => {
+    //   if (state.count > -50) {
+    //     return { count: (state.count = state.count - 1) };
+    //   }
+    // });
+    if(this.state.count > -50){
+      this.setState(state => ({
+        count: (state.count = state.count - 1)
+      }))
+    }
   };
 
   random = () => {
