@@ -1,18 +1,52 @@
 import React from 'react';
 import "./EmploeersListItem.css";
+import {Component} from "react"
 
-const EmploeersListItem = ({name,salary,increase}) => {
+class EmploeersListItem extends Component  {
+    constructor(props){
+        super(props)
 
-    let classNames = increase? `list-group-item d-flex justify-content-between increase` :`list-group-item d-flex justify-content-between `
-   
-  return (
+        this.state = {
+            increase: false,
+            like: false,
+        }
+
+    }
     
-      <li className={classNames}>
-          <span className="list-group-item-label">{name}</span>
+    onIncrease = () => {
+        this.setState(({increase}) => ({
+            increase: !increase
+        }))
+    }
+    onLike = () => {
+       
+       this.setState(({like}) =>({
+           like: !like
+       }))
+       
+    }
+
+    render(){
+        const {name,salary} = this.props;
+        const {increase} = this.state;
+        const {like} = this.state
+       
+
+        // let classNames = increase? `list-group-item d-flex justify-content-between increase` :`list-group-item d-flex justify-content-between `
+        let classNames = increase? `list-group-item increase` :`list-group-item`
+        let classNameLike = like? ' like': ' '
+    return (
+    
+      <li className={classNames + classNameLike}>
+          <span className="list-group-item-label"
+                onClick={this.onLike}
+          >{name}</span>
           <input type="text" className="list-group-item-input" defaultValue={salary + ' $'}/>
-          <div className='d-flex justify-content-center align-items-center'>
+          {/* <div className='d-flex justify-content-center align-items-center time'> */} 
+          <div className='time'>
               <button type="button"
-                  className="btn-cookie btn-sm ">
+                  className="btn-cookie btn-sm "
+                  onClick={this.onIncrease}>
                   <i className="fas fa-cookie"></i>
               </button>
 
@@ -25,6 +59,7 @@ const EmploeersListItem = ({name,salary,increase}) => {
       </li>
   
   )
+    }
 }
 
 export default EmploeersListItem
