@@ -2,7 +2,7 @@ import React from "react";
 import "./EmploeersList.css";
 import EmploeersListItem from "../EmploeersListItem/EmploeersListItem";
 
-const EmploeersList = ({ data ,onDelete, onToggleIncrease, onToggleLike}) => {
+const EmploeersList = ({ data ,onDelete, onToggleProps}) => {
 
   const elemEmployees = data.map((item)=>{
       const {id, ...itemProps} = item
@@ -14,8 +14,7 @@ const EmploeersList = ({ data ,onDelete, onToggleIncrease, onToggleLike}) => {
         increase={item.increase} 
         like={item.like}
         onDelete={() => onDelete(id)}
-        onToggleIncrease={() => onToggleIncrease(id) }
-        onToggleLike={() => onToggleLike(id)}
+        onToggleProps={(e) => onToggleProps(id,e.currentTarget.getAttribute('data-toggle')) }
         />  /// можно написать {...itemProps} просто развернет весь обьект {name: 'Yurii'} и тд
     );
   })

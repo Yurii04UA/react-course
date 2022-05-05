@@ -20,7 +20,13 @@ class EmploeersAddForm extends Component{
   }
   onSubmit = (e)=> {
     e.preventDefault()
-    this.props.onAdd(this.state.name,this.state.salary)
+    const {name,salary} = this.state
+    const validName = name.split('')
+    if(validName.length >= 3 && salary>0){
+      this.props.onAdd(name,salary)
+    }else{
+      alert("Name min 2 characters and salary greater than 0")
+    }
     this.setState({
       name:'',
       salary:''

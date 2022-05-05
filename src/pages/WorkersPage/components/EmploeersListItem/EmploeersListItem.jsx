@@ -6,8 +6,7 @@ const EmploeersListItem = (props) => {
     name,
     salary,
     onDelete,
-    onToggleIncrease,
-    onToggleLike,
+    onToggleProps,
     increase,
     like,
   } = props;
@@ -17,8 +16,11 @@ const EmploeersListItem = (props) => {
   let classNameLike = like ? " like" : " ";
   return (
     <li className={classNames + classNameLike}>
-      <span className="list-group-item-label" onClick={onToggleLike}>
-        {name}
+      <span 
+        className="list-group-item-label" 
+        onClick={onToggleProps} 
+        data-toggle='like'>
+            {name}
       </span>
       <input
         type="text"
@@ -30,7 +32,8 @@ const EmploeersListItem = (props) => {
         <button
           type="button"
           className="btn-cookie btn-sm "
-          onClick={onToggleIncrease}
+          onClick={onToggleProps}
+          data-toggle='increase'
         >
           <i className="fas fa-cookie"></i>
         </button>
