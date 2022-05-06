@@ -19,6 +19,10 @@ class App extends Component {
         { name: "Mar S", salary: 1100, increase: false, like: false, id: 3 },
         { name: "Had A", salary: 950, increase: false, like: false, id: 4 },
       ],
+      term:'',
+      filter:'all',
+      
+
     };
     this.maxId = this.state.data.length + 1;
   }
@@ -60,16 +64,45 @@ class App extends Component {
        return item;
      })
    }))
-
-
   };
 
+  searhEmp = (item, term) => {
+    if(term.length ===0){
+      return item
+    }
+
+    return item.filter(item => {
+      return item.name.indexOf(term) > -1 
+    })
+  }
+
+  onUpdateSearch = (term) => {
+    this.setState({term:term})
+  }
  
+  filterPost = (item, filter) => {
+    if(filter === 'like'){
+      return item.filter(item => item.like)
+    } else if(filter === 'moreThem1000'){
+      return item.filter(item => item.salary > 1000)
+    } else{
+      return item
+    }
+  }
+
+  onFilterSelect = (filter) => {
+    this.setState({
+      filter: filter
+    })
+  }
 
   render() {
-
+    const {filter,term,data} = this.state
     const employees = this.state.data.length;
     const increaseTotal = this.state.data.filter(item => item.increase).length
+    
+    const visibelData= this.filterPost(this.searhEmp(data,term),filter);
+
     return (
       <div className="app">
         <AppInfo 
@@ -77,11 +110,15 @@ class App extends Component {
           increaseTotal={increaseTotal}/>
 
         <div className="search_panel">
-          <SearchPanel />
-          <AppFilter />
+          <SearchPanel 
+            onUpdateSearch={this.onUpdateSearch}/>
+          <AppFilter 
+           filter={filter}
+           onFilterSelect={this.onFilterSelect}
+            />
         </div>
         <EmploeersList
-          data={this.state.data}
+          data={visibelData}
           onDelete={this.deleteItem}
           onToggleProps={this.onToggleProps}
         />
