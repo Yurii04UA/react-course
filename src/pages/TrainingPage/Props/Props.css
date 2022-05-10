@@ -1,3 +1,10 @@
 .formProps{
    padding: 50px 0px;
 }
+.props{
+   padding: 15px;
+   border-radius: 10px;
+   border: 1px solid;
+   margin-bottom: 20px;
+   box-shadow: 5px 7px 10px rgba(0, 0, 0, .2);
+}

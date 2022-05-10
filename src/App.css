@@ -8,10 +8,11 @@
 .link:not(:last-child) {
   margin-right: 50px;
 
+
 }
 
 .active {
-  color: teal;
+  color: white;
   border: 1px solid ;
   padding: 5px;
   border-radius: 10px;
@@ -20,3 +21,4 @@
 .container{
   margin-top: 50px;
 }
+

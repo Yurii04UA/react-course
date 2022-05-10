@@ -10,6 +10,7 @@ import WorkersPage from "./pages/WorkersPage/WorkersPage";
 import Props from './pages/TrainingPage/Props/Props'
 import Counter from './pages/TrainingPage/Counter/Counter'
 import Events from "./pages/TrainingPage/Events-This/Events";
+import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
 
 function App() {
   
@@ -22,8 +23,10 @@ function App() {
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
-        <Route path="/events" element={<Events />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
+        <Route path="/events" element={<Events />} ></Route>
+        <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
+       
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       

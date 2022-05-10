@@ -1,7 +1,9 @@
 import React from "react";
-import { Component, Fragment } from "react";
+import { Component} from "react";
 import "./Props.css";
 
+
+// https://www.udemy.com/course/javascript_full/learn/lecture/28569043#overview  - styled component
 /////////////////////////////////////////////////// Functional components
 
 // // const WhoImI = (props)=>{ // можно деструктуризировать props
@@ -65,7 +67,7 @@ class WhoImI extends Component {
     const { name, surmane, link } = this.props;
     const { position, years } = this.state;
     return (
-      <Fragment>
+      <div className="props">
         <button onClick={this.nextYear}>{this.state.text}</button>
         <button onClick={this.prevYear}>---</button>
         <h1>
@@ -78,7 +80,7 @@ class WhoImI extends Component {
           <span>Entet text</span>
           <input type="text" onChange={(e) => this.inputChanges(e, "red")} />
         </form>
-      </Fragment>
+      </div>
     );
   }
 }
