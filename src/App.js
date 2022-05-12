@@ -7,10 +7,12 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
 
+
 import Props from './pages/TrainingPage/Props/Props'
 import Counter from './pages/TrainingPage/Counter/Counter'
 import Events from "./pages/TrainingPage/Events-This/Events";
 import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
+import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 
 function App() {
   
@@ -22,6 +24,7 @@ function App() {
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
+        <Route path="/marvel-page" element={<AppMarvelPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="/events" element={<Events />} ></Route>
