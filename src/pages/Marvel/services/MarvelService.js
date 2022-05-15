@@ -23,7 +23,7 @@ class MarvelService {
     const result = await this.getResurse(
       `${this._apiBase}characters/${id}?${this._apiKey}`
     );
-    console.log(result);
+    
     return this._transformCharacter(result.data.results[0]);
   };
 
