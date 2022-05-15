@@ -11,10 +11,15 @@
         grid-template-columns: 180px auto;
         column-gap: 30px;
     }
-    &__img {
+    // &__img {
+    //     width: 180px;
+    //     height: 180px;
+    //     object-fit: cover;
+    // }
+    &__imgContain {
         width: 180px;
         height: 180px;
-        object-fit: cover;
+        object-fit: contain;
     }
     &__info {
         display: grid;
