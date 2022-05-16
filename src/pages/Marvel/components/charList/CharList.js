@@ -46,7 +46,7 @@ class CharList extends Component{
         const {loading,error} = this.state
         const content = this.state.char.map((item) => {
             return (
-            <li className="char__item" key={item.id}>
+            <li className="char__item" key={item.id} onClick={() => this.props.onCharSelected(item.id)}>
                 <img src={item.thumbnail} alt={item.nane}/>
                 <div className="char__name">{item.name}</div>
             </li>)
