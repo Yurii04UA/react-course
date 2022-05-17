@@ -1,7 +1,7 @@
 import React from "react";
-import { Component} from "react";
+import { Component } from "react";
+import BootstrapTest from "../BootstrapTest/BootstrapTest";
 import "./Props.css";
-
 
 // https://www.udemy.com/course/javascript_full/learn/lecture/28569043#overview  - styled component
 /////////////////////////////////////////////////// Functional components
@@ -85,6 +85,29 @@ class WhoImI extends Component {
   }
 }
 
+const DynamicGreating = (props) => {
+  return (
+    <div className={"mb-3 p-3 border border-" + props.color}>
+      {/* {props.children} */}
+      {React.Children.map(props.children, (child) => {
+        return React.cloneElement(child, {
+          className: "shadow p-3 m-3 border rounded",
+        });
+      })}
+    </div>
+  );
+};
+
+const HelloGreating = () => {
+  return (
+    <div style={{ width: "600px", margin: "0 auto" }}>
+      <DynamicGreating color={"primary"}>
+        <h2>Hello world!!</h2>
+      </DynamicGreating>
+    </div>
+  );
+};
+
 /// Как свойство можно передавать:
 // - обьект  // name={{firsName: 'Yurii3'}}  елемент выглядит так My name is {name.firsName}
 // - функцию // name={()=> {return 'Yurii func'}}  елемент выглядит так My name is {name()}
@@ -92,14 +115,29 @@ const Props = () => {
   return (
     <div className="container">
       <WhoImI
-        name={"Yuro"}
-        surmane="Praka"
+        name={"Yurii"}
+        surmane="Paraka"
         link="https://translate.google.com/?hl=ru"
       />
       <WhoImI
         name="Oleg"
         surmane="Pavaka"
         link="https://translate.google.com/?hl=ru"
+      />
+
+      <HelloGreating />
+      <BootstrapTest
+        left={
+          <DynamicGreating color={"primary"}>
+            <h2>Hello.</h2>
+            <h2>This is props.children.</h2>
+          </DynamicGreating>
+        }
+        right={
+          <DynamicGreating color={"success"}>
+            <h2>Hello, this is props.children</h2>
+          </DynamicGreating>
+        }
       />
     </div>
   );
