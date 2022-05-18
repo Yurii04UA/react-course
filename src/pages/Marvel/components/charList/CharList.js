@@ -65,10 +65,14 @@ class CharList extends Component {
     this.itemRef.push(item)
   }
  
+  focusOnItem = (id) => {
+    this.itemRef.forEach(elem => elem.classList.remove('char__item_selected'));
+    this.itemRef[id].classList.add('char__item_selected')
+  }
 
   render() {
     const { loading, error, offset, charEnded } = this.state;
-    const content = this.state.char.map((item) => {
+    const content = this.state.char.map((item,i) => {
       return (
         <li
           className="char__item"
@@ -78,7 +82,7 @@ class CharList extends Component {
           onClick={
             () => {
               this.props.onCharSelected(item.id);
-              
+              this.focusOnItem(i)
             }
             
           }
