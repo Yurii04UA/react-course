@@ -108,12 +108,51 @@ const HelloGreating = () => {
   );
 };
 
+const Message = (props) =>{
+  return (
+    <h2>The counter is {props.count}</h2>
+  )
+
+  
+}
+
+class Counter extends Component{
+  state = {
+    count :0
+  }
+
+  changeCount = () => {
+    this.setState(({count}) => ({
+      count :count +1
+    }))
+  }
+
+  render(){
+    return(
+      
+      <>
+      <h2>{this.state.count}</h2>
+      {/* <Message count ={this.state.count}/>  {/* ← жесткая привязка компоненетов */}
+      {this.props.render(this.state.count)}
+        <button
+          className={'btn btn-primary'}
+          onClick={this.changeCount}
+        >click me</button>
+      </>
+    )
+  }
+}
+
+
 /// Как свойство можно передавать:
 // - обьект  // name={{firsName: 'Yurii3'}}  елемент выглядит так My name is {name.firsName}
 // - функцию // name={()=> {return 'Yurii func'}}  елемент выглядит так My name is {name()}
 const Props = () => {
   return (
     <div className="container">
+      <Counter render ={count => (
+        <Message count={count} />
+      )}/>
       <WhoImI
         name={"Yurii"}
         surmane="Paraka"

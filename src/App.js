@@ -10,7 +10,7 @@ import WorkersPage from "./pages/WorkersPage/WorkersPage";
 
 import Props from './pages/TrainingPage/Props/Props'
 import Counter from './pages/TrainingPage/Counter/Counter'
-import Events from "./pages/TrainingPage/Events-This/Events";
+import Ref from "./pages/TrainingPage/Events-This/Ref";
 import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
 import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 
@@ -27,7 +27,7 @@ function App() {
         <Route path="/marvel-page" element={<AppMarvelPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
-        <Route path="/events" element={<Events />} ></Route>
+        <Route path="/events" element={<Ref />} ></Route>
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
        
         <Route path="*" element={<PageNotFound />} />
