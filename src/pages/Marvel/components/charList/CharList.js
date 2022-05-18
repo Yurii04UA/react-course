@@ -12,7 +12,6 @@ class CharList extends Component {
     error: false,
     offset: 210,
     charEnded: false,
-
   };
 
   marverlServese = new MarvelService();
@@ -41,16 +40,16 @@ class CharList extends Component {
 
   onCharLoaded = (newChar) => {
     let ended = false;
-    if(newChar.length < 9){
-        ended = true;
+    if (newChar.length < 9) {
+      ended = true;
     }
 
     this.setState((state) => ({
-      char: [... state.char,...newChar],
+      char: [...state.char, ...newChar],
       loading: false,
       newItemLoading: false,
-      offset: state.offset +9,
-      charEnded: ended
+      offset: state.offset + 9,
+      charEnded: ended,
     }));
   };
 
@@ -61,14 +60,28 @@ class CharList extends Component {
     });
   };
 
+  itemRef = [];
+  setRef =(item) =>{
+    this.itemRef.push(item)
+  }
+ 
+
   render() {
-    const { loading, error,offset,charEnded } = this.state;
+    const { loading, error, offset, charEnded } = this.state;
     const content = this.state.char.map((item) => {
       return (
         <li
           className="char__item"
           key={item.id}
-          onClick={() => this.props.onCharSelected(item.id)}
+          ref={this.setRef}
+          tabIndex={0}
+          onClick={
+            () => {
+              this.props.onCharSelected(item.id);
+              
+            }
+            
+          }
         >
           <img src={item.thumbnail} alt={item.nane} />
           <div className="char__name">{item.name}</div>
@@ -83,11 +96,12 @@ class CharList extends Component {
         {spinner}
         {errors}
         <ul className="char__grid">{content}</ul>
-        <button className="button button__main button__long"
-                disabled={this.state.newItemLoading}
-                onClick={()=> this.onRequest(offset)}
-                style={{'display': charEnded? 'none': 'block'}}
-                >
+        <button
+          className="button button__main button__long"
+          disabled={this.state.newItemLoading}
+          onClick={() => this.onRequest(offset)}
+          style={{ display: charEnded ? "none" : "block" }}
+        >
           <div className="inner">load more</div>
         </button>
       </div>
