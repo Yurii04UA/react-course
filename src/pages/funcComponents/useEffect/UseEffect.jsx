@@ -93,6 +93,18 @@ const SliderFunc = (props) => {
     window.addEventListener('click',logging)
    return () => (window.removeEventListener('click',logging))  /// ← для отписки от ивента
   }, [slideState]);
+ 
+  const getPosts = async () =>{
+     const userPost = await fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json")
+     const userData = await userPost.json()
+     console.log(userData);
+    } 
+
+   useEffect( () => {
+      getPosts()
+   }
+      
+   )
 
   function changeSlide(i) {
     setSlide((slideState) => slideState + i);
