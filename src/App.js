@@ -6,6 +6,7 @@ import HomePage from "./pages/homePage/HomePage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
+import FuncComponents from "./pages/funcComponents/FuncComponents";
 
 
 import Props from './pages/TrainingPage/Props/Props'
@@ -21,6 +22,7 @@ function App() {
       <AppHeader />
       <Routes>
         <Route path="/" element={<HomePage />} ></Route>
+        <Route path="/func-components/*" element={<FuncComponents />}></Route>
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
