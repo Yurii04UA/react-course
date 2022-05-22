@@ -14,6 +14,7 @@ import Counter from './pages/TrainingPage/Counter/Counter'
 import Ref from "./pages/TrainingPage/Events-This/Ref";
 import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
 import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
+import UseState from "./pages/funcComponents/useState/UseState";
 
 function App() {
   
@@ -31,6 +32,8 @@ function App() {
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="/events" element={<Ref />} ></Route>
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
+       
+        <Route path="/use-state" element={<UseState />} ></Route>
        
         <Route path="*" element={<PageNotFound />} />
       </Routes>
