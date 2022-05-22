@@ -7,14 +7,16 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
 import FuncComponents from "./pages/funcComponents/FuncComponents";
+import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 
 
+/// second link
 import Props from './pages/TrainingPage/Props/Props'
 import Counter from './pages/TrainingPage/Counter/Counter'
 import Ref from "./pages/TrainingPage/Events-This/Ref";
 import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
-import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 import UseState from "./pages/funcComponents/useState/UseState";
+import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
 
 function App() {
   
@@ -34,6 +36,7 @@ function App() {
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
        
         <Route path="/use-state" element={<UseState />} ></Route>
+        <Route path="/use-effect" element={<UseEffect />} ></Route>
        
         <Route path="*" element={<PageNotFound />} />
       </Routes>

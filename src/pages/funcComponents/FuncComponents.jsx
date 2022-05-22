@@ -7,8 +7,8 @@ const FuncComponents = () => {
   return (
     <div className='container tr-page'>
      <nav className="navBar">
-        <NavLink to="/use-state" className="link">UseState</NavLink>
-        <NavLink to="/something" className="link" >something</NavLink>
+        <NavLink to="/use-state" className="link">useState</NavLink>
+        <NavLink to="/use-effect" className="link" >useEffect</NavLink>
         <NavLink to="/something" className="link">something</NavLink>
         <NavLink to="/something" className="link" >something</NavLink>
       
