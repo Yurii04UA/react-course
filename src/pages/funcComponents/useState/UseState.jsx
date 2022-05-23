@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Component } from "react";
 import { Container } from "react-bootstrap";
 import { useState } from "react";
 
-import './UseState.css'
+import "./UseState.css";
 
 class Slider extends Component {
   constructor(props) {
@@ -154,17 +154,17 @@ class Counter extends Component {
 
   render() {
     return (
-       <>
-       <h3 className="mt-5"> on class </h3>
-      <div className="appCounter">
-        <div className="counter">{this.state.count}</div>
-        <div className="controls">
-          <button onClick={this.increase}>INC</button>
-          <button onClick={this.decrease}>DEC</button>
-          <button onClick={this.random}>RND</button>
-          <button onClick={this.reset}>RESET</button>
+      <>
+        <h3 className="mt-5"> on class </h3>
+        <div className="appCounter">
+          <div className="counter">{this.state.count}</div>
+          <div className="controls">
+            <button onClick={this.increase}>INC</button>
+            <button onClick={this.decrease}>DEC</button>
+            <button onClick={this.random}>RND</button>
+            <button onClick={this.reset}>RESET</button>
+          </div>
         </div>
-      </div>
       </>
     );
   }
@@ -173,38 +173,96 @@ class Counter extends Component {
 //////////////////  Counter on func component ↓
 
 const CounterFunc = (props) => {
-   const [count, setCount] = useState(props.count)
+  const [count, setCount] = useState(props.count);
 
-   function incCount(){
-      if(count <50){
-         setCount((count) => count+ 1)
-      }
-   }
-   function decCount(){
-      if(count > -50){
-         setCount((count) => count- 1)
-      }
-   }
+  function incCount() {
+    if (count < 50) {
+      setCount((count) => count + 1);
+    }
+  }
+  function decCount() {
+    if (count > -50) {
+      setCount((count) => count - 1);
+    }
+  }
 
-   function randomCount (){
-      setCount((count => (count = Math.floor(Math.random() * (50 - -50) + -50))))
-   }
+  function randomCount() {
+    setCount((count) => (count = Math.floor(Math.random() * (50 - -50) + -50)));
+  }
 
-   function resetCount (){
-      setCount(props.count)
-   }
+  function resetCount() {
+    setCount(props.count);
+  }
   return (
-     <>
-     <h3 className="mt-5"> on func components </h3>
-    <div className="appCounter">
-      <div className="counter">{count}</div>
-      <div className="controls">
-        <button onClick={incCount}>INC</button>
-        <button onClick={decCount}>DEC</button>
-        <button onClick={randomCount}>RND</button>
-        <button onClick={resetCount}>RESET</button>
+    <>
+      <h3 className="mt-5"> on func components </h3>
+      <div className="appCounter">
+        <div className="counter">{count}</div>
+        <div className="controls">
+          <button onClick={incCount}>INC</button>
+          <button onClick={decCount}>DEC</button>
+          <button onClick={randomCount}>RND</button>
+          <button onClick={resetCount}>RESET</button>
+        </div>
       </div>
-    </div>
+    </>
+  );
+};
+
+const Exchange = (props) => {
+  const [currency, setCurrency] = useState(props.currency);
+  const [data, setData] = useState({});
+  const [loading,setLoading] = useState(true)
+
+  /// принимаем данные
+  const fetchData = async () => {
+    const result = await fetch(
+      "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json"
+    );
+    const res = await result.json();
+
+    setData(
+      res.map((item) => {
+        const container = {};
+        container.cc = item.cc;
+        container.rate = item.rate;
+        return container;
+      })
+    );
+    setLoading(false)
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+  const changeCurrency = (curren) => {
+    setCurrency(props.currency)
+    const [curr] = data.filter((item) => item.cc === curren);
+    setCurrency(props.currency * curr.rate)
+  };
+
+  return (
+    <>
+      <h3 className="mt-5"> exchange on func components </h3>
+      <div className="appCounter ">
+        <div className="counter">{currency}</div>
+        <div className="controls">
+          <button disabled={loading? true: false} name="EUR" onClick={() => changeCurrency("EUR")} 
+          >
+            Euro €
+          </button>
+          <button disabled={loading? true: false} name="USD" onClick={() => changeCurrency("USD")}>
+            USD $
+          </button>
+          <button disabled={loading? true: false} name="CZK" onClick={() => changeCurrency("CZK")}>
+            CZK Kč
+          </button>
+          <button disabled={loading? true: false} name="XAU" onClick={() => changeCurrency("XAU")}>
+            Золото
+          </button>
+        </div>
+      </div>
     </>
   );
 };
@@ -215,7 +273,8 @@ function UseState() {
       <Slider />
       <SliderFunc />
       <Counter />
-      <CounterFunc count={0}/>
+      <CounterFunc count={0} />
+      <Exchange currency={100} />
     </div>
   );
 }
