@@ -8,6 +8,7 @@ import TrainingPage from "./pages/TrainingPage/TrainingPage";
 import WorkersPage from "./pages/WorkersPage/WorkersPage";
 import FuncComponents from "./pages/funcComponents/FuncComponents";
 import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
+import ToDoLight from "./pages/toDoLight/ToDoLight";
 
 
 /// second link
@@ -33,6 +34,7 @@ function App() {
         <Route path="/props" element={<Props />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="/events" element={<Ref />} ></Route>
+        <Route path="/todo-light" element={<ToDoLight />} ></Route>
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
        
         <Route path="/use-state" element={<UseState />} ></Route>

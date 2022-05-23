@@ -239,7 +239,7 @@ const Exchange = (props) => {
   const changeCurrency = (curren) => {
     setCurrency(props.currency)
     const [curr] = data.filter((item) => item.cc === curren);
-    setCurrency(props.currency * curr.rate)
+    setCurrency((props.currency * curr.rate).toFixed(2))
   };
 
   return (

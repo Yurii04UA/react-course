@@ -14,7 +14,7 @@ const AppHeader = () => {
         <NavLink to="/marvel-page" className="link">Marvel Page</NavLink>
         <NavLink to="/workers-page" className="link">Workers Page</NavLink>
         <NavLink to="/react-course" className="link">React course</NavLink>
-        <NavLink to="/test4" className="link">test</NavLink>
+        <NavLink to="/todo-light" className="link">ToDo light</NavLink>
         <NavLink to="/test5" className="link">test</NavLink>
         
       </nav>
