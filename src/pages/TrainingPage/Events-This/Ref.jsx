@@ -1,56 +1,52 @@
 import React from "react";
+import { useRef, useState, useEffect } from "react";
 import "./Events.css";
 import { Component } from "react";
 
 import { Container } from "react-bootstrap";
 
-class Ref extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Ref = () => {
+  const [text, setText] = useState("");
 
-
-  myRefArr = []
-  createRef = (elem) => {
-    this.myRefArr.push(elem);
+  const myRef = useRef(1);
+  const focusFirstTI = () => {
+    myRef.current.focus();
   };
-  logger = () =>{
-    console.log(this.myRefArr);
-  }
-  render() {
-    return (
-      <Container>
-        <form className="w-500 border -mt-5 p-3">
-          <div className="mb-3">
-            <label htmlFor="exampleFormControlInput1" className="form-label">
-              Email address
-            </label >
-            <input
-              type="email"
-              className="form-control"
-              id="exampleFormControlInput1"
-              placeholder="name@example.com"
-              ref={this.createRef}
-              onClick={this.logger}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleFormControlTextarea1" className="form-label">
-              Example textarea
-            </label>
-            <textarea
-              className="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              ref={this.createRef}
-              onClick={this.logger}
-            ></textarea>
-          </div>
-        </form>
-      </Container>
-    );
-  }
-}
+
+  useEffect(() =>{ 
+    console.log(myRef.current);
+  })
+  return (
+    <Container>
+      <form className="w-500 border -mt-5 p-3">
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlInput1" className="form-label">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            onChange={e => setText(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+            Example textarea
+          </label>
+          <textarea
+            className="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            // onClick={focusFirstTI}
+            onClick={()=> myRef.current++}
+          ></textarea>
+        </div>
+      </form>
+    </Container>
+  );
+};
 class TextInput extends Component {
   doSmth = () => {
     console.log("sd");
