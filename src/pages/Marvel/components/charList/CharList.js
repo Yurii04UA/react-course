@@ -6,26 +6,21 @@ import ErrorMessage from "../ErrorMassage/ErrorMassage";
 
 const CharList = (props) => {
   const [char, setChar] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [newItemLoading, setNewItemLoading] = useState(false);
-  const [error, setError] = useState(false);
   const [offset, setOffset] = useState(210);
   const [charEnded, setCharEnded] = useState(false);
 
-  const marverlServese = useMarvelService();
+  const {loading,error,getAllCharacters} = useMarvelService();
 
   useEffect(() => {
     onRequest();
   }, []);
 
   const onRequest = (offset) => {
-    onCharListLoading();
-    marverlServese.getAllCharacters(offset).then(onCharLoaded).catch(onError);
+    setNewItemLoading(true);
+    getAllCharacters(offset).then(onCharLoaded)
   };
 
-  const onCharListLoading = () => {
-    setNewItemLoading(true);
-  };
 
   const onCharLoaded = (newChar) => {
     let ended = false;
@@ -34,16 +29,12 @@ const CharList = (props) => {
     }
 
     setChar((char) => [...char, ...newChar]);
-    setLoading(false);
     setNewItemLoading(false);
     setOffset((offset) => offset + 9);
     setCharEnded((charEnded) => ended);
   };
 
-  const onError = () => {
-    setLoading(false);
-    setError(true);
-  };
+
 
   let itemRef = useRef([]);
 

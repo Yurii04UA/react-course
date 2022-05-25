@@ -7,6 +7,7 @@ import CharInfo from "../charInfo/CharInfo";
 import ErrorBountary from "../ErrorBountary/ErrorBountary";
 
 import decoration from "../../resources/img/vision.png";
+import ComicsList from "../comicsList/ComicsList";
 
 const App = () => {
   // state = {
@@ -21,10 +22,10 @@ const App = () => {
     <div className="app">
       <AppHeader />
       <main>
-        <ErrorBountary>
+        {/* <ErrorBountary>
           <RandomChar />
         </ErrorBountary>
-        {/* <div className="char__content">
+        <div className="char__content">
           <ErrorBountary>
             <CharList onCharSelected={onCharSelected} />
           </ErrorBountary>
@@ -32,6 +33,7 @@ const App = () => {
             <CharInfo charId={selectedChar} />
           </ErrorBountary>
         </div> */}
+        <ComicsList />
         <img className="bg-decoration" src={decoration} alt="vision" />
       </main>
     </div>
