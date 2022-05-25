@@ -1,6 +1,6 @@
 import "./charList.scss";
 import { Component, useEffect, useState, useRef } from "react";
-import MarvelService from "../../services/MarvelService";
+import useMarvelService from "../../services/MarvelService";
 import Spinner from "../Spinner/Spinner";
 import ErrorMessage from "../ErrorMassage/ErrorMassage";
 
@@ -12,7 +12,7 @@ const CharList = (props) => {
   const [offset, setOffset] = useState(210);
   const [charEnded, setCharEnded] = useState(false);
 
-  const marverlServese = new MarvelService();
+  const marverlServese = useMarvelService();
 
   useEffect(() => {
     onRequest();

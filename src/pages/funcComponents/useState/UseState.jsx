@@ -325,14 +325,26 @@ const style = loading.value ? 'fs-5' : null
   return (
     
     <>
-      <h3 className="mt-5"> on func components </h3>
+      <h3 className="mt-5"> custom hook </h3>
       <div className="appCounter">
         <div className={`counter ${style}`}>{content}</div>
         <div className="controls">
-          <button onClick={count.incCount}>INC</button>
-          <button onClick={count.decCount}>DEC</button>
-          <button onClick={count.randomCount}>RND</button>
-          <button onClick={count.resetCount}>RESET</button>
+          <button 
+            onClick={count.incCount}
+            disabled={loading.value? true: false}
+            >INC</button>
+          <button 
+            onClick={count.decCount}
+            disabled={loading.value? true: false}
+            >DEC</button>
+          <button 
+            onClick={count.randomCount}
+            disabled={loading.value? true: false}
+            >RND</button>
+          <button 
+            onClick={count.resetCount}
+            disabled={loading.value? true: false}
+            >RESET</button>
         </div>
       </div>
     </>
