@@ -282,7 +282,6 @@ const Exchange = (props) => {
   );
 };
 
-
 //////// Custom hook
 function useCount(init) {
   const [value, setValue] = useState(init);
@@ -301,40 +300,34 @@ function useCount(init) {
   };
 
   const resetCount = () => {
-    setValue(init);
+    setValue(0);
   };
-  return {value, incCount,decCount,randomCount,resetCount}
+  return { value, incCount, decCount, randomCount, resetCount,setValue};
 }
 
 const RandomNumb = () => {
-  // const [count, setCount] = useState(0);
+  const count = useCount(null);
+  const loading= useCount(true)
 
-  // function incCount() {
-  //   if (count < 50) {
-  //     setCount((count) => count + 1);
-  //   }
-  // }
-  // function decCount() {
-  //   if (count > -50) {
-  //     setCount((count) => count - 1);
-  //   }
-  // }
+  const random = async () => {
+    const result = await fetch("http://www.randomnumberapi.com/api/v1.0/random?min=-50&max=50&count=1");
+    const [res] = await result.json();
+    
+    count.setValue(res)
+    loading.setValue(false)
+  };
 
-  // function randomCount() {
-  //   setCount((count) => (count = Math.floor(Math.random() * (50 - -50) + -50)));
-  // }
-
-  // function resetCount() {
-  //   setCount(0);
-  // }
-  
-  const count = useCount(2)
-  
+  useEffect(() => {
+    random();
+  }, []);
+const content = loading.value ? 'Loading...' : count.value;
+const style = loading.value ? 'fs-5' : null
   return (
+    
     <>
       <h3 className="mt-5"> on func components </h3>
       <div className="appCounter">
-        <div className="counter">{count.value}</div>
+        <div className={`counter ${style}`}>{content}</div>
         <div className="controls">
           <button onClick={count.incCount}>INC</button>
           <button onClick={count.decCount}>DEC</button>
