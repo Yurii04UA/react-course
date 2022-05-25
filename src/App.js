@@ -18,7 +18,7 @@ import Ref from "./pages/TrainingPage/Events-This/Ref";
 import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
 import UseState from "./pages/funcComponents/useState/UseState";
 import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
-
+import CustomHook from "./pages/funcComponents/customHook/CustomHook";
 function App() {
   
   return (
@@ -39,6 +39,7 @@ function App() {
        
         <Route path="/use-state" element={<UseState />} ></Route>
         <Route path="/use-effect" element={<UseEffect />} ></Route>
+        <Route path="/custom-hooks" element={<CustomHook />} ></Route>
        
         <Route path="*" element={<PageNotFound />} />
       </Routes>
