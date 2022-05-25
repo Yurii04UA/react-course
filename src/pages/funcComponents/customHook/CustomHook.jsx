@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 
+function useInputWithValidate(initValue){
+   const [value,setValue] = useState(initValue)
+
+   const onChange = event => setValue(event.target.value)
+   const validateInput = () =>{
+      return value.search(/\d/) >= 0
+   }
+
+   return {value, onChange, validateInput}
+}
+
 const CustomHook = () => {
-   const [text,setText] = useState('')
-   const [textArea, setTextArea] = useState('')
+  const text = useInputWithValidate('')
+  const textArea = useInputWithValidate('')
 
    // валидация проверяет на налицие цифр, если цифра вернет тру
    // const validateInput = (text) => {
@@ -14,14 +25,12 @@ const CustomHook = () => {
    // }
    // та же запись но короче ↓
 
-   const validateInput = (text) =>{
-      return text.search(/\d/) >= 0
-   }
-   const color = validateInput(text) ? 'text-danger': null
+   
+   const color = text.validateInput() ? 'text-danger': null
   return (
     <form className="border p-3 w-75 m-auto mt-5" >
       <div className="mb-5">
-      <input className="form-control" type="text" value={` ${text} /  ${textArea}`} readOnly/>
+      <input className="form-control" type="text" value={` ${text.value} /  ${textArea.value}`} readOnly/>
         <label htmlFor="exampleFormControlInput1" className="form-label mt-3">
           Email address
         </label>
@@ -30,8 +39,8 @@ const CustomHook = () => {
           className={`form-control ${color}`}
           id="exampleFormControlInput1"
           placeholder="name@example.com"
-          onChange={e => setText(e.target.value)}
-          value={text}
+          onChange={text.onChange}
+          value={text.value}
         />
       </div>
       <div className="mb-3">
@@ -42,8 +51,8 @@ const CustomHook = () => {
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
-          value={textArea}
-          onChange={e => setTextArea(e.target.value)}
+          value={textArea.value}
+          onChange={textArea.onChange}
         ></textarea>
       </div>
     </form >

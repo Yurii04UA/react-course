@@ -212,7 +212,7 @@ const CounterFunc = (props) => {
 const Exchange = (props) => {
   const [currency, setCurrency] = useState(props.currency);
   const [data, setData] = useState({});
-  const [loading,setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   /// принимаем данные
   const fetchData = async () => {
@@ -229,17 +229,17 @@ const Exchange = (props) => {
         return container;
       })
     );
-    setLoading(false)
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   const changeCurrency = (curren) => {
-    setCurrency(props.currency)
+    setCurrency(props.currency);
     const [curr] = data.filter((item) => item.cc === curren);
-    setCurrency((props.currency * curr.rate).toFixed(2))
+    setCurrency((props.currency * curr.rate).toFixed(2));
   };
 
   return (
@@ -248,19 +248,98 @@ const Exchange = (props) => {
       <div className="appCounter ">
         <div className="counter">{currency}</div>
         <div className="controls">
-          <button disabled={loading? true: false} name="EUR" onClick={() => changeCurrency("EUR")} 
+          <button
+            disabled={loading ? true : false}
+            name="EUR"
+            onClick={() => changeCurrency("EUR")}
           >
             Euro €
           </button>
-          <button disabled={loading? true: false} name="USD" onClick={() => changeCurrency("USD")}>
+          <button
+            disabled={loading ? true : false}
+            name="USD"
+            onClick={() => changeCurrency("USD")}
+          >
             USD $
           </button>
-          <button disabled={loading? true: false} name="CZK" onClick={() => changeCurrency("CZK")}>
+          <button
+            disabled={loading ? true : false}
+            name="CZK"
+            onClick={() => changeCurrency("CZK")}
+          >
             CZK Kč
           </button>
-          <button disabled={loading? true: false} name="XAU" onClick={() => changeCurrency("XAU")}>
+          <button
+            disabled={loading ? true : false}
+            name="XAU"
+            onClick={() => changeCurrency("XAU")}
+          >
             Золото
           </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+
+//////// Custom hook
+function useCount(init) {
+  const [value, setValue] = useState(init);
+  const incCount = () => {
+    if (value < 50) {
+      setValue((count) => count + 1);
+    }
+  };
+  const decCount = () => {
+    if (value > -50) {
+      setValue((count) => count - 1);
+    }
+  };
+  const randomCount = () => {
+    setValue((count) => (count = Math.floor(Math.random() * (50 - -50) + -50)));
+  };
+
+  const resetCount = () => {
+    setValue(init);
+  };
+  return {value, incCount,decCount,randomCount,resetCount}
+}
+
+const RandomNumb = () => {
+  // const [count, setCount] = useState(0);
+
+  // function incCount() {
+  //   if (count < 50) {
+  //     setCount((count) => count + 1);
+  //   }
+  // }
+  // function decCount() {
+  //   if (count > -50) {
+  //     setCount((count) => count - 1);
+  //   }
+  // }
+
+  // function randomCount() {
+  //   setCount((count) => (count = Math.floor(Math.random() * (50 - -50) + -50)));
+  // }
+
+  // function resetCount() {
+  //   setCount(0);
+  // }
+  
+  const count = useCount(2)
+  
+  return (
+    <>
+      <h3 className="mt-5"> on func components </h3>
+      <div className="appCounter">
+        <div className="counter">{count.value}</div>
+        <div className="controls">
+          <button onClick={count.incCount}>INC</button>
+          <button onClick={count.decCount}>DEC</button>
+          <button onClick={count.randomCount}>RND</button>
+          <button onClick={count.resetCount}>RESET</button>
         </div>
       </div>
     </>
@@ -275,6 +354,7 @@ function UseState() {
       <Counter />
       <CounterFunc count={0} />
       <Exchange currency={100} />
+      <RandomNumb />
     </div>
   );
 }
