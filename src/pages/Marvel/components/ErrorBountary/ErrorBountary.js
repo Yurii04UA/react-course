@@ -17,7 +17,10 @@ class ErrorBountary extends Component{
   render(){
      if(this.state.error){
         return(
+           <>
            <ErrorMassage />
+     
+           </>
         )
      }
 

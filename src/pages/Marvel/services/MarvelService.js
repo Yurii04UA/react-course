@@ -22,10 +22,10 @@ const useMarvelService = () => {
 
   const getAllComics = async (offset = _baseOffsetComics) => {
     const result = await request(
-      `${_apiBase}comics?orderBy=-title&limit=9&offset=${_baseOffsetComics}&${_apiKey}`
+      `${_apiBase}comics?orderBy=-title&limit=8&offset=${offset}&${_apiKey}`
     );
 
-    console.log(result.data.results.map((item) => _transformComics(item)));
+    // console.log(result.data.results.map((item) => _transformComics(item)));
     return result.data.results.map((item) => _transformComics(item));
   };
 
@@ -63,8 +63,8 @@ const useMarvelService = () => {
           : result.pageCount,
       prices:
         result.prices[0].price < 0.2
-          ? "Sorry. Information not found"
-          : result.prices[0].price,
+          ? "Unknown"
+          : `${result.prices[0].price}$`,
       language: result.textObjects[0]
         ? result.textObjects[0].language
         : "Sorry. Information not found",
