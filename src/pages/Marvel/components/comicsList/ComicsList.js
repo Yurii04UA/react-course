@@ -6,9 +6,10 @@ import { useEffect } from 'react';
 
 
 const ComicsList = () => {
-    const {getAllComics} = useMarvelService()
+    const {getAllComics,getComics} = useMarvelService()
    useEffect(()=>{
     getAllComics()
+    getComics(47159)
    },[])
     
 
