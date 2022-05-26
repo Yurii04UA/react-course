@@ -19,6 +19,7 @@ import BootstrapTest from "./pages/TrainingPage/BootstrapTest/BootstrapTest";
 import UseState from "./pages/funcComponents/useState/UseState";
 import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
 import CustomHook from "./pages/funcComponents/customHook/CustomHook";
+import FakeData from "./pages/TrainingPage/fake-data/FakeData";
 function App() {
   
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/events" element={<Ref />} ></Route>
         <Route path="/todo-light" element={<ToDoLight />} ></Route>
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
+        <Route path="/fake-data" element={<FakeData />} ></Route>
        
         <Route path="/use-state" element={<UseState />} ></Route>
         <Route path="/use-effect" element={<UseEffect />} ></Route>

@@ -14,6 +14,7 @@ const TrainingPage = () => {
         <NavLink to="/counter" className="link" >Counter</NavLink>
         <NavLink to="/events" className="link">Ref</NavLink>
         <NavLink to="/bootstrap-test" className="link" >Bootstrap test</NavLink>
+        <NavLink to="/fake-data" className="link" >Fake data</NavLink>
         {/* <Routes>
           <Route path="/props" element={<Props />} ></Route>
           <Route path="/counter" element={<Counter />} ></Route>

@@ -18,7 +18,7 @@ const ComicsList = () => {
 
   const onRender = (offset, initial) => {
     initial ? setnewItemLoading(false) : setnewItemLoading(true);
-    getAllComics(offset).then(onComicsLoaded);
+    getAllComics(offset).then(e => onComicsLoaded(e));
   };
 
   const onComicsLoaded = (newComics) => {
@@ -47,7 +47,7 @@ const ComicsList = () => {
       </li>
     );
   });
-
+console.log('render')
   const Spiner = loading && !newItemLoading ? <Spinner /> : null;
   const Error = error ? <ErrorMassage /> : null;
   return (
