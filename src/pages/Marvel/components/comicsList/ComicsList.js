@@ -1,8 +1,17 @@
 import './comicsList.scss';
 import uw from '../../resources/img/UW.png';
 import xMen from '../../resources/img/x-men.png';
+import useMarvelService from '../../services/MarvelService';
+import { useEffect } from 'react';
+
 
 const ComicsList = () => {
+    const {getAllComics} = useMarvelService()
+   useEffect(()=>{
+    getAllComics()
+   },[])
+    
+
     return (
         <div className="comics__list">
             <ul className="comics__grid">
