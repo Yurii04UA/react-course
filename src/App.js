@@ -20,6 +20,10 @@ import UseState from "./pages/funcComponents/useState/UseState";
 import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
 import CustomHook from "./pages/funcComponents/customHook/CustomHook";
 import FakeData from "./pages/TrainingPage/fake-data/FakeData";
+
+import ComicsPage from "./pages/Marvel/components/pages/ComicsPage"
+
+
 function App() {
   
   return (
@@ -31,7 +35,7 @@ function App() {
         <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
-        <Route path="/marvel-page" element={<AppMarvelPage />}></Route>
+        <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
         <Route path="/props" element={<Props />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="/events" element={<Ref />} ></Route>
@@ -42,7 +46,7 @@ function App() {
         <Route path="/use-state" element={<UseState />} ></Route>
         <Route path="/use-effect" element={<UseEffect />} ></Route>
         <Route path="/custom-hooks" element={<CustomHook />} ></Route>
-       
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       

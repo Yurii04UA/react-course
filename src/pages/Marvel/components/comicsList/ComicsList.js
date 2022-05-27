@@ -1,6 +1,4 @@
 import "./comicsList.scss";
-import uw from "../../resources/img/UW.png";
-import xMen from "../../resources/img/x-men.png";
 import useMarvelService from "../../services/MarvelService";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner/Spinner";
@@ -47,14 +45,14 @@ const ComicsList = () => {
       </li>
     );
   });
-console.log('render')
+
   const Spiner = loading && !newItemLoading ? <Spinner /> : null;
   const Error = error ? <ErrorMassage /> : null;
   return (
     <div className="comics__list">
       {Error}
       {Spiner}
-      <ul className="comics__grid">{content}</ul>
+      <ul className="comics__grid p-0">{content}</ul>
       <button
         className="button button__main button__long"
         onClick={() => onRender(offset)}
