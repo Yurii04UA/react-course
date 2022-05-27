@@ -60,8 +60,8 @@ const useMarvelService = () => {
       pageCount:
         result.pageCount < 1
           ? "Sorry. Information not found"
-          : result.pageCount,
-      prices:
+          : `${result.pageCount} p`,
+      price:
         result.prices[0].price < 0.2
           ? "Unknown"
           : `${result.prices[0].price}$`,

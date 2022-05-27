@@ -16,7 +16,9 @@
         a {
             color: black;
         }
-        
+        a:hover{
+            color: teal;
+        }
     }
     &__menu {
         ul {
@@ -28,7 +30,7 @@
             li {
                 margin: 0 8px;
                 a:hover {
-                    color: $main-color;
+                    color: red;
                 }
             }
         }

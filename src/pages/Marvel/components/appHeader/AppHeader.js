@@ -12,21 +12,25 @@ const AppHeader = () => {
       <nav className="app__menu">
         <ul>
           <li>
-            <NavLink 
-                end 
-                to="/marvel-page/"
-                style={({isActive}) => ({color: isActive? '#9F0013': 'inherit'})}
-                >
+            <NavLink
+              end
+              to="/marvel-page/"
+              style={({ isActive }) => ({
+                color: isActive ? "#9F0013" : "inherit",
+              })}
+            >
               Characters
             </NavLink>
           </li>
           /
           <li>
-            <NavLink 
-                end 
-                to="/marvel-page/comics"
-                style={({isActive}) => ({color: isActive? '#9F0013': 'inherit'})}
-                >
+            <NavLink
+              end
+              to="/marvel-page/comics"
+              style={({ isActive }) => ({
+                color: isActive ? "#9F0013" : "inherit",
+              })}
+            >
               Comics
             </NavLink>
           </li>
