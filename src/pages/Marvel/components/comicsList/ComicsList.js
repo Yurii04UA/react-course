@@ -1,6 +1,7 @@
 import "./comicsList.scss";
 import useMarvelService from "../../services/MarvelService";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 import ErrorMassage from "../ErrorMassage/ErrorMassage";
 
@@ -33,7 +34,7 @@ const ComicsList = () => {
   const content = comics.map((item, i) => {
     return (
       <li className="comics__item" key={i}>
-        <a href="#">
+        <Link to={`/marvel-page/comics/${item.id}`}>
           <img
             src={item.thumbnail}
             alt="ultimate war"
@@ -41,7 +42,7 @@ const ComicsList = () => {
           />
           <div className="comics__item-name">{item.title}</div>
           <div className="comics__item-price">{item.prices}</div>
-        </a>
+        </Link>
       </li>
     );
   });

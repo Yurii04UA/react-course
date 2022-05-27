@@ -9,9 +9,14 @@
         font-weight: bold;
         font-size: 28px;
         line-height: 37px;
+        
         span {
             color: $main-color;
         }
+        a {
+            color: black;
+        }
+        
     }
     &__menu {
         ul {
