@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import useMarvelService from "../../services/MarvelService";
 import Spinner from "../Spinner/Spinner";
 import ErrorMassage from "../ErrorMassage/ErrorMassage";
-import { useState, useEffect } from "react";
+import { useState, useEffect , lazy} from "react";
 
 import "./singleComic.scss";
 
