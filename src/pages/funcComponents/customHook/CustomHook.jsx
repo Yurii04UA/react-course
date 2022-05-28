@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {NavLink}from 'react-router-dom'
 
 function useInputWithValidate(initValue){
    const [value,setValue] = useState(initValue)
@@ -28,6 +29,8 @@ const CustomHook = () => {
    
    const color = text.validateInput() ? 'text-danger': null
   return (
+    <>
+    <NavLink className='link container text-end w-75' to='/func-components'> ← Back</NavLink>
     <form className="border p-3 w-75 m-auto mt-5" >
       <div className="mb-5">
       <input className="form-control" type="text" value={` ${text.value} /  ${textArea.value}`} readOnly/>
@@ -56,6 +59,8 @@ const CustomHook = () => {
         ></textarea>
       </div>
     </form >
+    </>
+    
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Component } from "react";
 import { Container } from "react-bootstrap";
 import { useState } from "react";
-
+import { NavLink } from "react-router-dom";
 import "./UseState.css";
 
 class Slider extends Component {
@@ -354,6 +354,7 @@ const style = loading.value ? 'fs-5' : null
 function UseState() {
   return (
     <div>
+      <NavLink className='link container text-end w-75' to='/func-components'> ← Back</NavLink>
       <Slider />
       <SliderFunc />
       <Counter />

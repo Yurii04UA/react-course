@@ -10,7 +10,7 @@ const FuncComponents = () => {
         <NavLink to="/use-state" className="link">useState</NavLink>
         <NavLink to="/use-effect" className="link" >useEffect</NavLink>
         <NavLink to="/custom-hooks" className="link" >Custom hooks</NavLink>
-        <NavLink to="/something" className="link">something</NavLink>
+        <NavLink to="/useReducer" className="link">useReducer</NavLink>
         <NavLink to="/something" className="link" >something</NavLink>
       
       </nav>

@@ -20,8 +20,7 @@ import UseState from "./pages/funcComponents/useState/UseState";
 import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
 import CustomHook from "./pages/funcComponents/customHook/CustomHook";
 import FakeData from "./pages/TrainingPage/fake-data/FakeData";
-
-import ComicsPage from "./pages/Marvel/components/pages/ComicsPage"
+import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
 
 
 function App() {
@@ -46,6 +45,7 @@ function App() {
         <Route path="/use-state" element={<UseState />} ></Route>
         <Route path="/use-effect" element={<UseEffect />} ></Route>
         <Route path="/custom-hooks" element={<CustomHook />} ></Route>
+        <Route path="/useReducer" element={<UseReducer />} ></Route>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

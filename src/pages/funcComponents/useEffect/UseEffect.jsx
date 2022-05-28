@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
-
+import { NavLink } from "react-router-dom";
 // class Slider extends Component {
 //   constructor(props) {
 //     super(props);
@@ -140,9 +140,11 @@ function UseEffect() {
    const [slider,setSlider] = useState(true)
   return (
     <div>
-       <button onClick={()=> setSlider(!slider)}>click</button>
+        <NavLink className='link container text-end w-75' to='/func-components'> ← Back</NavLink>
+       <>
+       <button className="d-block" onClick={()=> setSlider(!slider)}>click</button>
       {/* <Slider /> */}
-      {slider ? <SliderFunc />: null}
+      {slider ? <SliderFunc />: null}</>
     </div>
   );
 }
