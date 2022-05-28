@@ -354,7 +354,7 @@ const style = loading.value ? 'fs-5' : null
 function UseState() {
   return (
     <div>
-      <NavLink className='link container text-end w-75' to='/func-components'> ← Back</NavLink>
+      <NavLink className='link container mb-3 w-75' to='/func-components'> ← Back</NavLink>
       <Slider />
       <SliderFunc />
       <Counter />

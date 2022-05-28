@@ -140,7 +140,7 @@ function UseEffect() {
    const [slider,setSlider] = useState(true)
   return (
     <div>
-        <NavLink className='link container text-end w-75' to='/func-components'> ← Back</NavLink>
+        <NavLink className='link container mb-3 w-75' to='/func-components'> ← Back</NavLink>
        <>
        <button className="d-block" onClick={()=> setSlider(!slider)}>click</button>
       {/* <Slider /> */}

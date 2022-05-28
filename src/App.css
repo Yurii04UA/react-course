@@ -20,6 +20,9 @@ a{
   border-radius: 10px;
 }
 
+.linkBack{
+  color: red;
+}
 .container{
   margin-top: 50px;
 }

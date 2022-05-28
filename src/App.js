@@ -21,6 +21,7 @@ import UseEffect from "./pages/funcComponents/useEffect/UseEffect";
 import CustomHook from "./pages/funcComponents/customHook/CustomHook";
 import FakeData from "./pages/TrainingPage/fake-data/FakeData";
 import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
+import HigherOrderComponent from "./pages/funcComponents/HOC/HigherOrderComponent";
 
 
 function App() {
@@ -42,10 +43,11 @@ function App() {
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
         <Route path="/fake-data" element={<FakeData />} ></Route>
        
-        <Route path="/use-state" element={<UseState />} ></Route>
-        <Route path="/use-effect" element={<UseEffect />} ></Route>
-        <Route path="/custom-hooks" element={<CustomHook />} ></Route>
-        <Route path="/useReducer" element={<UseReducer />} ></Route>
+        <Route path="/func-components/use-state" element={<UseState />} ></Route>
+        <Route path="/func-components/use-effect" element={<UseEffect />} ></Route>
+        <Route path="/func-components/custom-hooks" element={<CustomHook />} ></Route>
+        <Route path="/func-components/useReducer" element={<UseReducer />} ></Route>
+        <Route path="/func-components/HOC" element={<HigherOrderComponent />} ></Route>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

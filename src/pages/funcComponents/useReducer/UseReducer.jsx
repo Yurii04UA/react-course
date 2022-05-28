@@ -76,7 +76,7 @@ const SliderFunc = () => {
 const UseReducer = () => {
   return (
     <div>
-      <NavLink className="link container text-end w-75" to="/func-components">
+      <NavLink className="link container mb-3 w-75" to="/func-components">
         {" "}
         ← Back
       </NavLink>
