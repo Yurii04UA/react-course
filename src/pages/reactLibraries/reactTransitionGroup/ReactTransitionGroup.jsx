@@ -22,7 +22,13 @@ const Modal = (props) => {
   };
 
   return (
-    <Transition timeout={duration} in={props.show}>
+    <Transition 
+      timeout={duration} 
+      in={props.show} 
+      unmountOnExit
+      onEnter={()=> props.showBtn(false)}
+      onExited={()=> props.showBtn(true)}
+      >
       {(state) => (
         <div className="modal mt-5 d-block " style={{
          ...defaultStyle,
@@ -68,7 +74,8 @@ const Modal = (props) => {
 
 const ReactTransitionGroup = () => {
   const [showModal, setShowModal] = useState(false);
-
+  const [showBtn, setShowBtn] = useState(true)
+ const body = document.querySelector('body')
   return (
     <>
       <nav>
@@ -77,14 +84,18 @@ const ReactTransitionGroup = () => {
         </NavLink>
       </nav>
       <Container>
-        <Modal onClose={setShowModal} show={showModal} />
-        <button
+        <Modal onClose={setShowModal} show={showModal} showBtn={setShowBtn}/>
+        {showBtn ? <button
           className="btn btn-warning btn-my mt-5"
           type="button"
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            setShowModal(true)
+            // body.classList.add('aaa')  так можно повесить на боди класс с еффектами
+          }}
+          
         >
           Open modal
-        </button>
+        </button> : null}
        
       </Container>
     </>
