@@ -9,7 +9,7 @@ import WorkersPage from "./pages/WorkersPage/WorkersPage";
 import FuncComponents from "./pages/funcComponents/FuncComponents";
 import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 import ToDoLight from "./pages/toDoLight/ToDoLight";
-
+import ReactLibraries from "./pages/reactLibraries/ReactLibraries";
 
 /// second link
 import Props from './pages/TrainingPage/Props/Props'
@@ -22,7 +22,7 @@ import CustomHook from "./pages/funcComponents/customHook/CustomHook";
 import FakeData from "./pages/TrainingPage/fake-data/FakeData";
 import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
 import HigherOrderComponent from "./pages/funcComponents/HOC/HigherOrderComponent";
-
+import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/ReactTransitionGroup";
 
 function App() {
   
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} ></Route>
         <Route path="/func-components/*" element={<FuncComponents />}></Route>
-        <Route path="/react-course" element={<h2>HEEEE</h2>}></Route>
+        <Route path="/react-libraries" element={<ReactLibraries/>}></Route>
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
@@ -48,6 +48,7 @@ function App() {
         <Route path="/func-components/custom-hooks" element={<CustomHook />} ></Route>
         <Route path="/func-components/useReducer" element={<UseReducer />} ></Route>
         <Route path="/func-components/HOC" element={<HigherOrderComponent />} ></Route>
+        <Route path="/react-libraries/react-transition-group/" element={<ReactTransitionGroup />} ></Route>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
