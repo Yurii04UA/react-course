@@ -10,6 +10,7 @@ import FuncComponents from "./pages/funcComponents/FuncComponents";
 import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 import ToDoLight from "./pages/toDoLight/ToDoLight";
 import ReactLibraries from "./pages/reactLibraries/ReactLibraries";
+import Formik from "./pages/reactLibraries/differentFormsLibrary/Formik";
 
 /// second link
 import Props from './pages/TrainingPage/Props/Props'
@@ -49,6 +50,7 @@ function App() {
         <Route path="/func-components/useReducer" element={<UseReducer />} ></Route>
         <Route path="/func-components/HOC" element={<HigherOrderComponent />} ></Route>
         <Route path="/react-libraries/react-transition-group/" element={<ReactTransitionGroup />} ></Route>
+        <Route path="/react-libraries/formik/" element={<Formik />} ></Route>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

@@ -10,7 +10,7 @@ const ReactLibraries = () => {
      <div className='container'>
        
       <NavLink className="link tr-page " to='/react-libraries/react-transition-group'>React transition Group </NavLink>
-      <NavLink className="link tr-page " to='/react-libraries/something'>something </NavLink>
+      <NavLink className="link tr-page " to='/react-libraries/formik'>Formik </NavLink>
       <NavLink className="link tr-page " to='/react-libraries/something'>something </NavLink>
     </div>
      </>
