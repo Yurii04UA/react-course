@@ -23,7 +23,7 @@ const Ref = () => {
           <label htmlFor="exampleFormControlInput1" className="form-label">
             Email address
           </label>
-          <input
+          <Field
             type="email"
             className="form-control"
             id="exampleFormControlInput1"
@@ -35,13 +35,13 @@ const Ref = () => {
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Example textarea
           </label>
-          <textarea
+          <Field
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
             // onClick={focusFirstTI}
             onClick={()=> myRef.current++}
-          ></textarea>
+          ></Field>
         </div>
       </form>
     </Container>
@@ -53,7 +53,7 @@ class TextInput extends Component {
   };
   render() {
     return (
-      <input
+      <Field
         type="email"
         className="form-control"
         id="exampleFormControlInput1"

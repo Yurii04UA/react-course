@@ -78,7 +78,7 @@ class WhoImI extends Component {
 
         <form className="formProps">
           <span>Entet text</span>
-          <input type="text" onChange={(e) => this.inputChanges(e, "red")} />
+          <Field type="text" onChange={(e) => this.inputChanges(e, "red")} />
         </form>
       </div>
     );

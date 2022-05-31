@@ -33,11 +33,11 @@ const CustomHook = () => {
     <NavLink className='link container mb-3  w-75' to='/func-components'> ← Back</NavLink>
     <form className="border p-3 w-75 m-auto mt-5" >
       <div className="mb-5">
-      <input className="form-control" type="text" value={` ${text.value} /  ${textArea.value}`} readOnly/>
+      <Field className="form-control" type="text" value={` ${text.value} /  ${textArea.value}`} readOnly/>
         <label htmlFor="exampleFormControlInput1" className="form-label mt-3">
           Email address
         </label>
-        <input
+        <Field
           type="email"
           className={`form-control ${color}`}
           id="exampleFormControlInput1"
@@ -50,13 +50,13 @@ const CustomHook = () => {
         <label htmlFor="exampleFormControlTextarea1" className="form-label">
           Example textarea
         </label>
-        <textarea
+        <Field
           className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
           value={textArea.value}
           onChange={textArea.onChange}
-        ></textarea>
+        ></Field>
       </div>
     </form >
     </>
