@@ -6,6 +6,7 @@ import ErrorBountary from "../ErrorBountary/ErrorBountary";
 
 import { useState } from 'react';
 import decoration from "../../resources/img/vision.png";
+import SearchForm from '../searchForm/SearchForm';
 
 const MainPage = () => {
    const [selectedChar, setSelectedChar] = useState(null);
@@ -22,8 +23,12 @@ const MainPage = () => {
             <CharList onCharSelected={onCharSelected} />
           </ErrorBountary>
           <ErrorBountary>
-            <CharInfo charId={selectedChar} />
+            <div>
+              <CharInfo charId={selectedChar} />
+              <SearchForm/>
+            </div>
           </ErrorBountary>
+         
         </div>
         <img className="bg-decoration" src={decoration} alt="vision" />
     </>
