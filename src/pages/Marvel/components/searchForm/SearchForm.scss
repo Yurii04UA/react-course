@@ -13,37 +13,28 @@
       line-height: 24px;
    }
    input{
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-      margin-right: 20px;
+      padding: 0 10px;
+      width: 250px;
+      height: 38px;
+      border: none;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 14px;
+      margin-right: 10px;
+      &:focus{
+         outline: none;
+         border: 1px solid rgba(128, 128, 128, 0.637);
+      }
    }
-   .sssss {
-      position: relative;
-      background-color: red;
-      line-height: 18px;
-      padding: 0 18px;
-      transition: none;
-      &::before {
-          border-color: red transparent;
-          border-style: solid;
-          border-width: 0 0 10px 10px;
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          top: -10px;
-          transition: none;
-      }
-      &::after {
-          border-color: red transparent;
-          border-style: solid;
-          border-width: 0 0 10px 10px;
-          content: "";
-          display: block;
-          position: absolute;
-          right: 0;
-          bottom: -10px;
-          transform: rotate(180deg);
-          transition: none;
-      }
-  }
+   label{
+      display: block;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 24px;
+            color: #000;
+   }
+   .error{
+      margin-top: 10px;
+      color: red;
+   }
 }
