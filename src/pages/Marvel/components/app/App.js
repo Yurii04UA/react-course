@@ -7,6 +7,7 @@ import AppHeader from "../appHeader/AppHeader";
 // import SingleComic from "../singleComic/SingleComic";
 import Spinner from "../Spinner/Spinner";
 import PageNotFound from "../../../PageNotFound/PageNotFound";
+import SingleChar from "../singleChar/SingleChar";
 
 /// Lazy page loading
 /// Dinamic imports must be under static imports
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/comics" element={<ComicsPage />} />
           <Route path="/comics/:comicId" element={<SingleComic />} />
+          <Route path="/characters/:charId" element={<SingleChar />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>

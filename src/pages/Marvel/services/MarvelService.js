@@ -11,9 +11,9 @@ const useMarvelService = () => {
 
   const getCharacterByName = async(name) => {
     const result = await request(`${_apiBase}characters?name=${name}&${_apiKey}`)
-    const [resultData] = result.data.results
-    // console.log(_transformCharacterByName(resultData));
-    return _transformCharacterByName(resultData)
+    // const [resultData] = result.data.results
+    // console.log((resultData));
+    return result.data.results.map(_transformCharacter);
   } 
   
   const getAllCharacters = async (offset = _baseOffset) => {
@@ -24,7 +24,7 @@ const useMarvelService = () => {
   };
   const getCharacter = async (id) => {
     const result = await request(`${_apiBase}characters/${id}?${_apiKey}`);
-
+    // console.log(_transformCharacter(result.data.results[0]))
     return _transformCharacter(result.data.results[0]);
   };
 
