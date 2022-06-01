@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 import AppBanner from '../appBanner/AppBanner'
 import useMarvelService from '../../services/MarvelService'
 import './SingleChar.scss'
+import Spinner from '../Spinner/Spinner'
+import ErrorMassage from '../ErrorMassage/ErrorMassage'
 
 
 
@@ -26,12 +28,17 @@ const onCharLoaded = (char) => {
 }
 
 
+const spiner = loading? <Spinner /> : null
+const content = loading? null : <Wiev data={data}/>
+const errorMessage = error? <ErrorMassage /> : null
   return (
      
     <div>
        <AppBanner/>
+       {errorMessage}
+       {spiner}
+       {content}
        
-       <Wiev data={data}/>
        </div>
   )
 }
@@ -45,6 +52,7 @@ const Wiev = ({data}) => {
           <h2 className="single-comic__name">{name}</h2>
           <p className="single-comic__descr">{description}</p>
       </div>
+      <NavLink className='single-comic__back' to='/marvel-page/' >Back to all </NavLink>
   </div>
    )
 }
