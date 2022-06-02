@@ -11,6 +11,7 @@ import AppMarvelPage from "./pages/Marvel/AppMarvelPage";
 import ToDoLight from "./pages/toDoLight/ToDoLight";
 import ReactLibraries from "./pages/reactLibraries/ReactLibraries";
 import Formik from "./pages/reactLibraries/differentFormsLibrary/Formik";
+import Redux from "./pages/redux/Redux";
 
 /// second link
 import Props from './pages/TrainingPage/Props/Props'
@@ -24,6 +25,7 @@ import FakeData from "./pages/TrainingPage/fake-data/FakeData";
 import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
 import HigherOrderComponent from "./pages/funcComponents/HOC/HigherOrderComponent";
 import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/ReactTransitionGroup";
+import ReduxSanbox from "./pages/redux/reduxSanbox/ReduxSanbox";
 
 function App() {
   
@@ -37,13 +39,16 @@ function App() {
         <Route path="/training-page/*" element={<TrainingPage />}></Route>
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
+        <Route path="/redux" element={<Redux />}></Route>
+        
+
+        {/* second peges */}
         <Route path="/props" element={<Props />} ></Route>
         <Route path="/counter" element={<Counter count={0}/>} ></Route>
         <Route path="/events" element={<Ref />} ></Route>
         <Route path="/todo-light" element={<ToDoLight />} ></Route>
         <Route path="/bootstrap-test" element={<BootstrapTest />} ></Route>
         <Route path="/fake-data" element={<FakeData />} ></Route>
-       
         <Route path="/func-components/use-state" element={<UseState />} ></Route>
         <Route path="/func-components/use-effect" element={<UseEffect />} ></Route>
         <Route path="/func-components/custom-hooks" element={<CustomHook />} ></Route>
@@ -51,6 +56,7 @@ function App() {
         <Route path="/func-components/HOC" element={<HigherOrderComponent />} ></Route>
         <Route path="/react-libraries/react-transition-group/" element={<ReactTransitionGroup />} ></Route>
         <Route path="/react-libraries/formik/" element={<Formik />} ></Route>
+        <Route path="/redux/sandbox" element={<ReduxSanbox />} ></Route>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
