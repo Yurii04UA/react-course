@@ -1,35 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { createStore, bindActionCreators } from "redux";
+import reducer from "./reducer";
+// import { inc, dec, rnd } from "./actions";
+import * as actions from "./actions";
+import { Provider } from "react-redux";
 
-const initialState = 0;
-const reducer = (state =0, action) => {
-   switch(action.type){
-      case "INC": 
-         return state +1 ;
-      case "DEC":
-         return state -1;
-      default :
-         return state
-   }
-   
-   
-}
+import App from "./components/App";
+
+const store = createStore(reducer);
+
+// const { dispatch, subscribe, getState } = store;
 
 
+// const bindActionCreator = (creator,dispatch) => (...args) => {
+//   dispatch(creator(...args))
+// }
+// const { inc, dec, rnd } = bindActionCreators(actions, dispatch);
 
-
-
-// let state = reducer(initialState,{type:'INC'})
-// console.log(state);
-// state = reducer(state,{type:'INC'})
-// console.log(state);
-// state = reducer(state,{type:'INC'})
-// console.log(state);
-// state = reducer(state,{type:'INC'})
-// console.log(state);
-// state = reducer(state,{type:'DEC'})
-// console.log(state);
 const ReduxSanbox = () => {
   return (
     <>
@@ -38,8 +26,17 @@ const ReduxSanbox = () => {
         ← Back
       </NavLink>
       <div className="container">
-    
-
+        {/* <Counter counter={getState().value}
+          inc={inc}
+          dec={dec}
+          rnd={()=>{
+            const value = Math.floor(Math.random*10)
+            rnd(value)
+          }}
+        /> */}
+        <Provider store={store}>
+          <App />
+        </Provider>
       </div>
     </>
   );
