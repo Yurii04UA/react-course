@@ -16,7 +16,7 @@ const reducer = (state =0, action) => {
    
 }
 
-const store = createStore()
+
 
 
 
@@ -38,7 +38,7 @@ const ReduxSanbox = () => {
         ← Back
       </NavLink>
       <div className="container">
-
+    
 
       </div>
     </>
