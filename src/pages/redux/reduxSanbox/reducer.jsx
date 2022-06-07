@@ -1,4 +1,4 @@
-const inithialState = {value : 0}
+const inithialState = {value : 0, foo:'bar'}
 const reducer = (state = inithialState, action) => {
   switch (action.type) {
     case "INC":
