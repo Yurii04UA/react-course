@@ -13,6 +13,7 @@ import ReactLibraries from "./pages/reactLibraries/ReactLibraries";
 import Formik from "./pages/reactLibraries/differentFormsLibrary/Formik";
 import Redux from "./pages/redux/Redux";
 
+
 /// second link
 import Props from './pages/TrainingPage/Props/Props'
 import Counter from './pages/TrainingPage/Counter/Counter'
@@ -26,7 +27,8 @@ import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
 import HigherOrderComponent from "./pages/funcComponents/HOC/HigherOrderComponent";
 import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/ReactTransitionGroup";
 import ReduxSanbox from "./pages/redux/reduxSanbox/ReduxSanbox";
-import WeaterApp from "./pages/weatherAPP/WeaterApp";
+import Home from "./pages/weatherAPP/Pages/Home/Home";
+import AdditionalStatistics from "./pages/weatherAPP/Pages/AdditionalStatistics/AdditionalStatistics";
 
 function App() {
   
@@ -41,7 +43,7 @@ function App() {
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
         <Route path="/redux" element={<Redux />}></Route>
-        <Route path="/weather" element={<WeaterApp />}></Route>
+        
         
 
         {/* second peges */}
@@ -59,6 +61,8 @@ function App() {
         <Route path="/react-libraries/react-transition-group/" element={<ReactTransitionGroup />} ></Route>
         <Route path="/react-libraries/formik/" element={<Formik />} ></Route>
         <Route path="/redux/sandbox" element={<ReduxSanbox />} ></Route>
+        <Route path='/weather' element={<Home />}/>
+        <Route path='/weather/additional-statistics' element={<AdditionalStatistics />}/>
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
