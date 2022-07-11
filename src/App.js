@@ -26,6 +26,7 @@ import UseReducer from "./pages/funcComponents/useReducer/UseReducer";
 import HigherOrderComponent from "./pages/funcComponents/HOC/HigherOrderComponent";
 import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/ReactTransitionGroup";
 import ReduxSanbox from "./pages/redux/reduxSanbox/ReduxSanbox";
+import WeaterApp from "./pages/weatherAPP/WeaterApp";
 
 function App() {
   
@@ -40,6 +41,7 @@ function App() {
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
         <Route path="/redux" element={<Redux />}></Route>
+        <Route path="/weather" element={<WeaterApp />}></Route>
         
 
         {/* second peges */}
