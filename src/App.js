@@ -29,6 +29,7 @@ import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/Re
 import ReduxSanbox from "./pages/redux/reduxSanbox/ReduxSanbox";
 import Home from "./pages/weatherAPP/Pages/Home/Home";
 import AdditionalStatistics from "./pages/weatherAPP/Pages/AdditionalStatistics/AdditionalStatistics";
+import WeaterApp from "./pages/weatherAPP/WeaterApp";
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
         <Route path="/redux" element={<Redux />}></Route>
+
         
         
 

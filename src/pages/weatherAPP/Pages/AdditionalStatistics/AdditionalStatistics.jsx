@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Header from "../../components/header/Header";
 
 const AdditionalStatistics = () => {
   return (
-    <div>AdditionalStatistics</div>
-  )
-}
+    <>
+      <Header />
+      <div>AdditionalStatistics</div>
+    </>
+  );
+};
 
-export default AdditionalStatistics
+export default AdditionalStatistics;

@@ -1,10 +1,22 @@
-import React from 'react'
-import "./Home.scss"
+import React from "react";
+import ThisDay from "./components/ThisDay/ThisDay";
+import ThisDayInfo from "./components/ThisDayInfo/ThisDayInfo";
+
+import "./Home.scss";
+import { NavLink } from "react-router-dom";
+import Header from "../../components/header/Header";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="container-weather">
+      <NavLink to="additional-statistics">sd</NavLink>
+      <Header />
+      <div className="thisDayWrapper">
+        <ThisDay />
+        <ThisDayInfo />
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
