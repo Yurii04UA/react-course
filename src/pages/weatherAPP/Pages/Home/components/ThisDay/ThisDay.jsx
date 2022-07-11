@@ -1,6 +1,6 @@
 import React from "react";
 import "./ThisDay.scss";
-import sun from "./sun.png";
+import sun from "./images/sun.png";
 
 const ThisDay = () => {
   return (
@@ -12,8 +12,8 @@ const ThisDay = () => {
         </div>
         <img src={sun} alt="Sun" />
       </div>
-      <p>Time: 22:30</p>
-      <p>City: Dnipro</p>
+      <p>Time: <span>22:30</span></p>
+      <p>City: <span>Dnipro</span></p>
     </div>
   );
 };

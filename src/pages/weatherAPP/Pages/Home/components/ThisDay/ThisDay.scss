@@ -1,35 +1,40 @@
-.thisDay{
-   padding: 10px;
+@import '../../../../style/variables.scss';
+
+.thisDay {
    border: 1px solid rgba(128, 128, 128, 0.2);
+   border-radius: 10px;
    max-width: 400px;
    width: 100%;
-   box-shadow: 5px 5px 10px rgba(0,0,0, .2);
-   background-color: rgba(255, 255, 255, 0.8);
-   border-radius: 10px;
-   padding: 10px;
-   img{
+   box-shadow: $box-shadow;
+   background: $lite-backround;
+   padding: 10px 35px;
+
+   img {
       width: 120px;
    }
-   .box{
+
+   .box {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
       margin-bottom: 20px;
-      h2{
+
+      h2 {
          font-size: 96px;
          font-weight: 500;
          color: #4793FF;
+         letter-spacing: 2px;
       }
-      p{
+
+      p {
          text-align: start;
          font-size: 30px;
          color: rgb(58, 58, 58);
       }
    }
-   >p{
+
+   >p {
       text-align: start;
-      padding-left: 55px;
       color: grey;
       font-size: 22px;
    }

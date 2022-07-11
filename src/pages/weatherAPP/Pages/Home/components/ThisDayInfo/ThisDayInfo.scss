@@ -1,6 +1,70 @@
-.thisDayInfo{
+@import "./../../../../style/variables.scss";
+
+.thisDayInfo {
    border: 1px solid rgba(128, 128, 128, 0.2);
+   border-radius: 10px;
    width: 100%;
-   box-shadow: 5px 5px 10px rgba(0,0,0, .2);
-   background-color: rgba(255, 255, 255, 0.8);
+   padding: 10px 35px;
+   box-shadow: $box-shadow;
+   background-color: $lite-backround;
+   padding: 15px 35px;
+
+  
+
+
+   >div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+
+   }
+
+   .block {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      p {
+         color: grey;
+         font-size: 16px;
+         max-width: 140px;
+         width: 100%;
+         text-align: start;
+      }
+
+      span {
+         font-size: 16px;
+
+      }
+   }
+
+   .circle {
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, .25);
+
+      img {
+         position: relative;
+         top: 50%;
+         transform: translate(0%, -50%);
+      }
+
+      // &:not(:last-child){
+      //    margin-bottom: 20px;
+      // }
+   }
+
+}
+.cloudy{
+   background-image: url('./images/cloudy.png');
+   background-size: cover;
+}
+.rain{
+   background-image: url('./images/rain.png');
+   background-size: cover;
+
 }
