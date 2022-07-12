@@ -2,11 +2,11 @@ import React from "react";
 import ThisDay from "./components/ThisDay/ThisDay";
 import ThisDayInfo from "./components/ThisDayInfo/ThisDayInfo";
 import Days from "./components/Days/Days";
+import Popup from "../../components/Popup/Popup";
 
 import "./Home.scss";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/header/Header";
-
 
 const Home = () => {
   return (
@@ -17,8 +17,9 @@ const Home = () => {
         <ThisDay />
         <ThisDayInfo />
       </div>
-     
+
       <Days />
+      <Popup />
     </div>
   );
 };

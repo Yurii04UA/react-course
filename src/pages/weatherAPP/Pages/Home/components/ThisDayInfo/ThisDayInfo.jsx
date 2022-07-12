@@ -1,16 +1,43 @@
 import React from "react";
 import "./ThisDayInfo.scss";
-import deg from "./images/deg.png";
-import press from "./images/pressure.png";
-import rainfall from "./images/rainfall.png";
-import wind from "./images/wind.png";
+import ThisDayItem from './ThisDayItem'
+
 
 const ThisDayInfo = () => {
+  const items = [
+    {
+      icon_id: "temp",
+      name: "Air temperature",
+      value: "20° - feels like 17°",
+    },
+    {
+      icon_id: "pressure",
+      name: "Pressure",
+      value: "765 mmHg - normal",
+    },
+    {
+      icon_id: "precipitation",
+      name: "Precipitation",
+      value: "No precipitation",
+    },
+    {
+      icon_id: "wind",
+      name: "Wind",
+      value: "3 m/s southwest - light breeze",
+    }
+  ];
   return (
     <div className="thisDayInfo sunny">
-      
       <div>
-        <div className="block">
+        {items.map(item => <ThisDayItem  key={item.icon_id} item={item}/>)}
+      </div>
+    </div>
+  );
+};
+
+export default ThisDayInfo;
+
+{/* <div className="block">
           <div className="circle">
             <img src={deg} alt="deg" />
           </div>
@@ -37,10 +64,4 @@ const ThisDayInfo = () => {
           </div>
           <p>Wind</p>
           <span>3 m/s southwest - light breeze</span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ThisDayInfo;
+        </div> */}
