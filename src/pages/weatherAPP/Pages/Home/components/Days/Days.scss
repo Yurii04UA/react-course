@@ -4,26 +4,62 @@
    border-radius: 5px;
    width: 150px;
    text-align: start;
-  >div{
-   &:not(:last-child){
-      margin-bottom: 5px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   &:hover{
+      transform: scale(1.03);
    }
-  }
+   >div {
+      &:not(:last-child) {
+         margin-bottom: 5px;
+      }
+   }
 }
 
 .days {
    display: flex;
    gap: 20px;
-   margin-top: 20px;
+
    padding: 15px;
    box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
    background: rgba(255, 255, 255, 0.8);
    border-radius: 10px;
 }
-.day{
+
+.day {
    font-weight: bold;
 }
-.second_color{
+
+.second_color {
    color: gray;
    font-size: 14px;
+}
+
+.buttons {
+   text-align: left;
+   margin-top: 30px;
+
+   .btn {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      margin-bottom: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
+      &:not(:last-child) {
+         margin-right: 10px;
+      }
+
+      &:hover {
+         background-color: #4794ff86;
+         color: rgba(255, 255, 255, 0.8);
+      }
+   }
+
+   .btn{
+      &.active{
+      background-color: #4793FF;
+      color: rgba(255, 255, 255, 0.8);   
+      }
+      
+   }
 }

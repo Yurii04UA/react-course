@@ -62,9 +62,16 @@ const Days = () => {
       info: "cloudy",
     },
   ];
-  return <div className="days">
-   {days.map((day,i)=> <Card key={i} item={day}/>)}
-  </div>;
+  return (
+    <div>
+      <Tabs />
+      <div className="days">
+        {days.map((day, i) => (
+          <Card key={i} item={day} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Days;

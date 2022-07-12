@@ -17,6 +17,7 @@ const Home = () => {
         <ThisDay />
         <ThisDayInfo />
       </div>
+     
       <Days />
     </div>
   );
