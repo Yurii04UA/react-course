@@ -19,7 +19,7 @@ const Home = () => {
       </div>
 
       <Days />
-      <Popup />
+      {/* <Popup /> */}
     </div>
   );
 };
