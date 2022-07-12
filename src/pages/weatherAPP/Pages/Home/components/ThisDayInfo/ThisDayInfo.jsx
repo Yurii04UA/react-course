@@ -7,7 +7,7 @@ import wind from "./images/wind.png";
 
 const ThisDayInfo = () => {
   return (
-    <div className="thisDayInfo  rain">
+    <div className="thisDayInfo sunny">
       
       <div>
         <div className="block">
