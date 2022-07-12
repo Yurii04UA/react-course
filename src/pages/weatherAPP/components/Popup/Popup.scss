@@ -12,7 +12,8 @@
    z-index: 1005;
    border-radius: 10px;
    box-shadow: $box-shadow;
-   background-color: $lite-backround;
+   background-color: rgba(255, 255, 255);
+   padding: 20px;
    
 }
 .popup-wrapper{
@@ -44,5 +45,20 @@
      svg{
       transform: rotate(360deg) 
      }     
+   }
+}
+
+.day_temp{
+   font-size: 60px;
+   color: #4793FF;
+}
+.day_time,.day_city{
+   color: gray;
+   font-size: 14px;
+}
+.day{
+   text-align: left;
+   .img,.day_name{
+      margin-bottom: 10px;
    }
 }

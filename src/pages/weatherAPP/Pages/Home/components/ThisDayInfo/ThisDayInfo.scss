@@ -9,16 +9,11 @@
    background-color: $lite-backround;
    padding: 15px 35px;
 
-  
-
-
    >div {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-
-
    }
 
    .block {
@@ -36,9 +31,9 @@
 
       span {
          font-size: 16px;
-
       }
    }
+
 
    .circle {
       border: 1px solid rgba(128, 128, 128, 0.2);
@@ -59,19 +54,72 @@
    }
 
 }
-.cloudy{
+
+.thisDayInfoModal {
+   
+   border-radius: 10px;
+   width: 100%;
+   padding: 10px 35px;
+   
+   background-color: rgba(255, 255, 255);
+   padding: 15px 35px;
+
+   >div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+   }
+
+   .block {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      p {
+         color: grey;
+         font-size: 16px;
+         max-width: 140px;
+         width: 100%;
+         text-align: start;
+      }
+
+      span {
+         font-size: 16px;
+      }
+   }
+   .circle {
+      border: 1px solid rgba(128, 128, 128, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, .25);
+
+      svg {
+         position: relative;
+         top: 50%;
+         transform: translate(0%, -50%);
+      }
+
+   
+   }
+}
+.cloudy {
    background-image: url('./images/cloudy.png');
    background-size: cover;
 }
-.rainy{
+
+.rainy {
    background-image: url('./images/rain.png');
    background-size: cover;
 }
-.sunny{
+
+.sunny {
    background-image: url('./images/sunny2.png');
    background-size: cover;
 }
-.windy{
+
+.windy {
    background-image: url('./images/windy.png');
    background-size: cover;
 }
