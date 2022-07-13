@@ -62,7 +62,7 @@
    width: 100%;
    padding: 10px 35px;
    
-   background-color: var(#{--components-backround-default});
+
    padding: 15px 35px;
 
    >div {
@@ -87,7 +87,7 @@
 
       span {
          font-size: 16px;
-         color: var(#{--text-color-default});
+         color: var(#{--text-color-default});;
       }
    }
    .circle {

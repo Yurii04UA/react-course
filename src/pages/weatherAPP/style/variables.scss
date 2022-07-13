@@ -10,7 +10,8 @@ $card-backround-light: rgba(71, 148, 255, 0.3);
 
 $dark-color: #000;
 $white-color: #fff;
-
+$dark-color-shadow:  5px 5px 10px rgba(147, 147, 147, 0.2);
+$white-color-shadow:  5px 5px 10px rgb(0 0 0 / 20%);
 :root{
    //components
    --components-backround-dark: #{$components-backround-dark};
@@ -26,4 +27,9 @@ $white-color: #fff;
    --text-color-dark: #{$dark-color};
    --text-color-light: #{$white-color};
    --text-color-default: #{$dark-color};
+
+   //shadow
+   --shadow-color-dark: #{$dark-color-shadow};
+   --shadow-color-light: #{$white-color-shadow};
+   --shadow-color-default: #{$dark-color-shadow};
 }

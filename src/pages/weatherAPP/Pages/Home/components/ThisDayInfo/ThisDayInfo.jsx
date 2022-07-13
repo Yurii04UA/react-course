@@ -27,7 +27,7 @@ const ThisDayInfo = () => {
     }
   ];
   return (
-    <div className="thisDayInfo sunny">
+    <div className="thisDayInfo">
       <div>
         {items.map(item => <ThisDayItem  key={item.icon_id} item={item}/>)}
       </div>

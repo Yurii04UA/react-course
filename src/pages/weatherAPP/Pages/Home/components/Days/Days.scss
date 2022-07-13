@@ -11,7 +11,8 @@
    cursor: pointer;
    transition: all 0.3s ease;
    &:hover{
-      transform: scale(1.03);
+      transform: scale(1.02);
+      box-shadow: var(#{--shadow-color-default});
    }
    >div {
       &:not(:last-child) {

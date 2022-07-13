@@ -12,19 +12,21 @@
    }
 
    .select {
-      background-color: #4794ff65;
+      background-color: var(#{--card-backround-default});
       border-radius: 5px;
       max-width: 200px;
       width: 100%;
       padding-left: 5px;
       padding: 5px;
+      color: var(#{--text-color-default});
 
       &:focus {
          outline: none;
       }
 
       option {
-         background-color: #4794ff65;
+         background-color: var(#{--card-backround-default});
+         color: var(#{--text-color-default});
       }
    }
 }

@@ -37,7 +37,7 @@ const Popup = () => {
          <div className="day_time"> Time: <span>22:30</span></div>
          <div className="day_city"><span>City: Dnipro</span></div>
       </div>
-      <div className="thisDayInfoModal sunny">
+      <div className="thisDayInfoModal">
         <div className="popup-wrapper">
           {items.map((item) => (
             <ThisDayItem key={item.icon_id} item={item} />
