@@ -6,7 +6,7 @@
    width: 100%;
    padding: 10px 35px;
    box-shadow: $box-shadow;
-   background-color: $lite-backround;
+   background-color: var(#{--components-backround-default});
    padding: 15px 35px;
 
    >div {
@@ -31,6 +31,7 @@
 
       span {
          font-size: 16px;
+         color: var(#{--text-color-default});
       }
    }
 
@@ -61,7 +62,7 @@
    width: 100%;
    padding: 10px 35px;
    
-   background-color: rgba(255, 255, 255);
+   background-color: var(#{--components-backround-default});
    padding: 15px 35px;
 
    >div {
@@ -86,6 +87,7 @@
 
       span {
          font-size: 16px;
+         color: var(#{--text-color-default});
       }
    }
    .circle {

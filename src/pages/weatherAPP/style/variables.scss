@@ -1,2 +1,29 @@
-$lite-backround: rgba(255, 255, 255, 0.8);
+$light-backround: rgb(255, 245, 245);
 $box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+$primary-color:#4793FF;
+
+$components-backround-dark: #4f4f4f;
+$components-backround-light: rgb(255, 245, 245);
+
+$card-backround-dark: #2E3035;
+$card-backround-light: rgba(71, 148, 255, 0.3);
+
+$dark-color: #000;
+$white-color: #fff;
+
+:root{
+   //components
+   --components-backround-dark: #{$components-backround-dark};
+   --components-backround-light: #{$components-backround-light};
+   --components-backround-default: #{$components-backround-light};
+
+   //card
+   --card-backround-dark: #{$card-backround-dark};
+   --card-backround-light: #{$card-backround-light};
+   --card-backround-default: #{$card-backround-light};
+
+   //text
+   --text-color-dark: #{$dark-color};
+   --text-color-light: #{$white-color};
+   --text-color-default: #{$dark-color};
+}
