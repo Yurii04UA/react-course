@@ -9,9 +9,9 @@ $card-backround-dark: #2E3035;
 $card-backround-light: rgba(71, 148, 255, 0.3);
 
 $dark-color: #000;
-$white-color: #fff;
+$light-color: #fff;
 $dark-color-shadow:  5px 5px 10px rgba(147, 147, 147, 0.2);
-$white-color-shadow:  5px 5px 10px rgb(0 0 0 / 20%);
+$light-color-shadow:  5px 5px 10px rgb(0 0 0 / 20%);
 :root{
    //components
    --components-backround-dark: #{$components-backround-dark};
@@ -24,12 +24,12 @@ $white-color-shadow:  5px 5px 10px rgb(0 0 0 / 20%);
    --card-backround-default: #{$card-backround-light};
 
    //text
-   --text-color-dark: #{$dark-color};
-   --text-color-light: #{$white-color};
-   --text-color-default: #{$dark-color};
+   --text-color-light: #{$dark-color};
+   --text-color-dark: #{$light-color};
+   --text-color-default: #{$light-color};
 
    //shadow
    --shadow-color-dark: #{$dark-color-shadow};
-   --shadow-color-light: #{$white-color-shadow};
-   --shadow-color-default: #{$dark-color-shadow};
+   --shadow-color-light: #{$light-color-shadow};
+   --shadow-color-default: #{$light-color-shadow};
 }

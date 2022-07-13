@@ -14,6 +14,10 @@
    box-shadow: $box-shadow;
    background-color: var(#{--components-backround-default});
    padding: 20px;
+   background-image: url('../../Pages/Home/components/ThisDayInfo/images/cloudy.png');
+   background-repeat: no-repeat;
+   background-position: 100% 0%;
+   
    
 }
 .popup-wrapper{
@@ -60,5 +64,6 @@
    text-align: left;
    .img,.day_name{
       margin-bottom: 10px;
+      color: var(#{--text-color-default});
    }
 }
