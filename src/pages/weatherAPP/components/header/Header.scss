@@ -12,6 +12,17 @@
       color: #4793FF;
    }
 
+   .img{
+      color: var(#{--text-color-default});
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 5px;
+      background-color: var(#{--components-backround-default});
+   }
    .select {
       background-color: var(#{--card-backround-default});
       border-radius: 5px;
