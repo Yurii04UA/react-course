@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import { useTheme } from "../../hooks/useTheme";
 import "./Header.scss";
 import logo from "./logo.png";
 import icon from "./switch_theme.png";
 
 const Header = () => {
-  const [thema, setThema] = useState("light");
+  const themeGlobal = useContext(ThemeContext)
+  // const [thema, setThema] = useState("light");
   const changeTheme = () => {
-    setThema(thema === "light" ? "dark" : "light");
+    // setThema(thema === "light" ? "dark" : "light");
+    // themeGlobal.changeTheme(themeGlobal.theme === 'light'? "dark" : "light")
+      themeGlobal.changeTheme()    
   };
 
   useEffect(() => {
@@ -21,28 +27,10 @@ const Header = () => {
     components.forEach(elem =>{
       root.style.setProperty(
         `${elem}default`,
-        `var(${elem}${thema})`
+        `var(${elem}${themeGlobal.theme})`
       );
     })
-    // root.style.setProperty(
-    //   "--components-backround-default",
-    //   `var(--components-backround-${thema})`
-    // );
-
-    // root.style.setProperty(
-    //   "--card-backround-default",
-    //   `var(--card-backround-${thema})`
-    // );
-
-    // root.style.setProperty(
-    //   "--text-color-default",
-    //   `var(--text-color-${thema})`
-    // );
-    // root.style.setProperty(
-    //   "--shadow-color-default",
-    //   `var(--shadow-color-${thema})`
-    // );
-  }, [thema]);
+  }, [themeGlobal.theme]);
   return (
     <div className="header">
       <div className="wrapper">
