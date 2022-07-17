@@ -10,7 +10,9 @@ import Header from "../../components/header/Header";
 
 const Home = () => {
   useEffect(()=>{
-    fetchCurrentWeather('London')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Dnipro&units=metric&appid=3a14ed878c17ea88667c02de9b9be534').then(res => res.json()).then(e => console.log(e))
+    console.log(new Date(1658062441341));
+    console.log(Date.now());
   },[])
   return (
     
