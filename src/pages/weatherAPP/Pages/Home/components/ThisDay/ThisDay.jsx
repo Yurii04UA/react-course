@@ -3,6 +3,7 @@ import "./ThisDay.scss";
 import sun from "./images/sun.png";
 
 const ThisDay = () => {
+  const time = `${new Date().getHours()}:${new Date().getMinutes()}`
   return (
     <div className="thisDay">
       <div className="box">
@@ -12,7 +13,7 @@ const ThisDay = () => {
         </div>
         <img src={sun} alt="Sun" />
       </div>
-      <p>Time: <span>22:30</span></p>
+      <p>Time: <span>{time}</span></p>
       <p>City: <span>Dnipro</span></p>
     </div>
   );

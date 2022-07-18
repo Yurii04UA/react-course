@@ -12,6 +12,7 @@ import ToDoLight from "./pages/toDoLight/ToDoLight";
 import ReactLibraries from "./pages/reactLibraries/ReactLibraries";
 import Formik from "./pages/reactLibraries/differentFormsLibrary/Formik";
 import Redux from "./pages/redux/Redux";
+import LoginApp from "./pages/Login/LoginApp";
 
 
 /// second link
@@ -29,7 +30,7 @@ import ReactTransitionGroup from "./pages/reactLibraries/reactTransitionGroup/Re
 import ReduxSanbox from "./pages/redux/reduxSanbox/ReduxSanbox";
 import Home from "./pages/weatherAPP/Pages/Home/Home";
 import AdditionalStatistics from "./pages/weatherAPP/Pages/AdditionalStatistics/AdditionalStatistics";
-import WeaterApp from "./pages/weatherAPP/WeaterApp";
+
 
 function App() {
   
@@ -44,6 +45,7 @@ function App() {
         <Route path="/workers-page" element={<WorkersPage />}></Route>
         <Route path="/marvel-page/*" element={<AppMarvelPage />}></Route>
         <Route path="/redux" element={<Redux />}></Route>
+        <Route path="/login" element={<LoginApp />}></Route>
 
         
         
