@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 import axios from "../api/axios";
@@ -16,21 +16,20 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [admin, setAdmin] = useState({ login: "admin", pass: "admin" });
 
   useEffect(() => {
     userRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, password]);
+
 
   const back = () => {
-   setSuccess(false)
-  }
+    setSuccess(false);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+   
     try {
       // const response = await axios.post(LOGIN_URL, JSON.stringify({user,password}),{
       //    headers:{'Content-Type': 'application/json'},
@@ -42,34 +41,44 @@ const Login = () => {
       // const accessToken = response?.data?.accessToken;
       // const roles = response?.data?.roles;
       // setAuth({user,password,roles,accessToken})
-
+      if(user === admin.login || password === admin.pass){
+         setSuccess(true);
+         setErrMsg('')
+      }else{
+         setErrMsg("Missing Username or Password")
+      }
       setUser("");
       setPassword("");
-      setSuccess(true);
+      
     } catch (err) {
-      if(!err?.response){
-         setErrMsg('No Server Response')
-      } else if (err.response?.status === 400){
-         setErrMsg('Missing Username or Password')
-      } else if(err.response?.status === 401){
-         setErrMsg('Unauthorized')
-      } else{
-         setErrMsg('Login Failed')
-      }
-      errRef.current.focus()
+      // if (!err?.response) {
+      //   setErrMsg("No Server Response");
+      // } else if (err.response?.status === 400) {
+      //   setErrMsg("Missing Username or Password");
+      // } else if (err.response?.status === 401) {
+      //   setErrMsg("Unauthorized");
+      // } else {
+      //   setErrMsg("Login Failed");
+      // }
+      
+      errRef.current.focus();
     }
   };
+
   return (
     <>
       {success ? (
         <div className="form mt-5">
           <h1>You are logged in!</h1>
           <p>
-            <a onClick={back} href="#">Go to home</a>
+            <a onClick={back} href="#">
+              Go to home
+            </a>
           </p>
         </div>
       ) : (
         <div className="form mt-5">
+         <p>log:admin, pwd:admin</p>
           <p ref={errRef} className={errMsg ? "errMsg" : null}>
             {errMsg}
           </p>

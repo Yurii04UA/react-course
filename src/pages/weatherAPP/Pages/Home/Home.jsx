@@ -7,18 +7,18 @@ import { fetchCurrentWeather } from "../../store/slices/thunks/fetchCurrentWeath
 import "./Home.scss";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/header/Header";
+import { useState } from "react";
+
 
 const Home = () => {
-   
+  const [data,setData] = useState([]);
+  const [city,setCity] = useState('dnipro')
   useEffect(()=>{
    
-    const data = async function(){
-      fetch('https://api.openweathermap.org/data/2.5/weather?q=Dnipro&units=metric&appid=3a14ed878c17ea88667c02de9b9be534').then(res => res.json()).then(e => console.log(e))
-     
-      console.log();
-    }
-    data()
-  },[])
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=3a14ed878c17ea88667c02de9b9be534`).then(res => res.json()).then(data => setData(data))    
+      // console.log(1658236389);
+      // console.log(Date.now());
+  },[city])
   return (
     
       <div className="container-weather">

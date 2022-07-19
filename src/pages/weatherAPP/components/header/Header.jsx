@@ -31,7 +31,7 @@ const Header = () => {
           <option value="select">Select city</option>
           <option value="location">Your location</option>
           <option value="Dnipro">Dnipro</option>
-          <option value="Kiev">Kiev</option>
+          <option value="Kiev">Kyiv</option>
         </select>
       </div>
     </div>
