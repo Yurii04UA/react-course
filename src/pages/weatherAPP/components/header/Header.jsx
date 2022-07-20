@@ -7,7 +7,9 @@ import "./Header.scss";
 import logo from "./logo.png";
 import icon from "./switch_theme.png";
 
-const Header = () => {
+
+const Header = ({changeCity}) => {
+  const changeCitys =changeCity
   const themeGlobal = useContext(ThemeContext);
   // const [thema, setThema] = useState("light");
   const changeTheme = () => {
@@ -15,7 +17,9 @@ const Header = () => {
     // themeGlobal.changeTheme(themeGlobal.theme === 'light'? "dark" : "light")
     themeGlobal.changeTheme();
   };
-
+const change =(e) => {
+  changeCitys(e.target.value)
+}
   return (
     <div className="header">
       <div className="wrapper">
@@ -27,11 +31,12 @@ const Header = () => {
           <p>Switch theme</p>
           <img src={icon} alt="icon_select_theme"  />
         </div>
-        <select className="select">
+        <select onChange={change} className="select">
           <option value="select">Select city</option>
           <option value="location">Your location</option>
           <option value="Dnipro">Dnipro</option>
           <option value="Kiev">Kyiv</option>
+          <option value="Kharkiv">Kharkiv</option>
         </select>
       </div>
     </div>
