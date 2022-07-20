@@ -16,7 +16,7 @@ const ThisDay = ({data,loading}) => {
         {loading? <img src="smt-img" alt='loading' /> : <img src="smt-img" alt={weather[0].description} />}
       </div>
       <p>Time: <span>{time}</span></p>
-      <p>City: <span>{name}</span></p>
+      <p>City: <span>{loading? <span>--</span>: name}</span></p>
     </div>
   );
 };

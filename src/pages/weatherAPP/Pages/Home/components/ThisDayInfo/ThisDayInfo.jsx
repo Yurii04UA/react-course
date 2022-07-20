@@ -3,27 +3,29 @@ import "./ThisDayInfo.scss";
 import ThisDayItem from './ThisDayItem'
 
 
-const ThisDayInfo = () => {
+const ThisDayInfo = ({data,loading}) => {
+ const {main,wind,weather} =data
   const items = [
     {
       icon_id: "temp",
       name: "Air temperature",
-      value: "20° - feels like 17°",
+      value: loading? '--': `${main.temp.toFixed(0)}°C - feels like ${main.feels_like.toFixed(0)}°C`,
+      // value: `° - feels_like 17°`,
     },
     {
       icon_id: "pressure",
       name: "Pressure",
-      value: "765 mmHg - normal",
+      value: loading? '--':`${main.pressure} mmHg `,
     },
     {
       icon_id: "precipitation",
       name: "Precipitation",
-      value: "No precipitation",
+      value: loading? '--':`${weather[0].description}`,
     },
     {
       icon_id: "wind",
       name: "Wind",
-      value: "3 m/s southwest - light breeze",
+      value: loading? '--':`${wind.speed} m/s  - light breeze`,
     }
   ];
   return (

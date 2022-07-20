@@ -14,6 +14,7 @@ const UsePosition = (watch = false, userSettings = {}) => {
 
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
+  const [load,setLoad] = useState(true)
 
   const onChange = ({coords, timestamp}) => {
     setPosition({
@@ -24,6 +25,7 @@ const UsePosition = (watch = false, userSettings = {}) => {
       heading: coords.heading,
       timestamp,
     });
+      
   };
 
   const onError = (error) => {
@@ -37,6 +39,7 @@ const UsePosition = (watch = false, userSettings = {}) => {
     }
 
     if (watch) {
+      
       const watcher =
         navigator.geolocation.watchPosition(onChange, onError, settings);
       return () => navigator.geolocation.clearWatch(watcher);
@@ -49,6 +52,6 @@ const UsePosition = (watch = false, userSettings = {}) => {
     settings.maximumAge,
   ]);
 
-  return {...position, error};
+  return {...position, error,load};
 };
 export default UsePosition
