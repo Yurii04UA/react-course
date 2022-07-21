@@ -32,8 +32,8 @@ const change =(e) => {
           <img src={icon} alt="icon_select_theme"  />
         </div>
         <select onChange={change} className="select">
-          <option value="select">Select city</option>
-          <option value="location">Your location</option>
+          <option  disabled selected>Select city</option>
+          <option value="london">London</option>
           <option value="Dnipro">Dnipro</option>
           <option value="Kiev">Kyiv</option>
           <option value="Kharkiv">Kharkiv</option>

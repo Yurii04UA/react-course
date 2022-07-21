@@ -16,6 +16,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [city, setCity] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [daily,setDaily] = useState([])
 
   const { latitude, longitude, error, load } = UsePosition();
 
@@ -37,9 +38,18 @@ const Home = () => {
       .then(() => setIsLoading(false));
 
     }
-    // console.log(1658236389);
+    // console.log(new Date(1658368800));
     // console.log(Date.now());
   }, [city]);
+
+    useEffect(() => {
+      setIsLoading(true);
+     if(latitude != undefined){
+      const lat = data.coord.lat
+      const lon = data.coord.lon
+      fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly&units=metric&appid=3a14ed878c17ea88667c02de9b9be534`).then(res => res.json()).then(data=> setDaily(data.daily)).then(() => setIsLoading(false));
+     }
+    },[data])
   return (
     <div className="container-weather">
       <NavLink to="additional-statistics">sd</NavLink>
@@ -53,7 +63,7 @@ const Home = () => {
         <ThisDayInfo data={data} loading={isLoading} />
       </div>
 
-      <Days />
+      <Days daily={daily} loading={isLoading}/>
       {/* <Popup /> */}
     </div>
   );

@@ -2,14 +2,14 @@ import React from "react";
 import GlobalSvgSelectors from '../../../../assets/icons/global/GlobalSvgSelectors'
 
 const Card = ({item}) => {
-  const { day, day_info, icon_id, temp_day, temp_night, info } = item;
+  const {icon_id, temp, weather, info } = item;
   return <div className="cards">
-    <div className="day">{day}</div>
-    <div className="second_color">{day_info}</div>
-    <div><GlobalSvgSelectors id={icon_id} /></div>
-    <div>{temp_day}</div>
-    <div className="second_color">{temp_night}</div>
-    <div className="second_color">{info}</div>
+    <div className="day">--</div>
+    <div className="second_color">--</div>
+    <div><img src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} alt={weather[0].description} /></div>
+    <div>{temp.day.toFixed(0)}°C</div>
+    <div className="second_color">{temp.night.toFixed(0)}°C</div>
+    <div className="second_color">{weather[0].description}</div>
   </div>;
 };
 
