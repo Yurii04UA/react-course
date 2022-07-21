@@ -10,9 +10,13 @@
    padding: 10px 35px;
 
    img {
-      width: 120px;
+      width: 150px;
    }
-
+   .weather-box{
+     
+      background-color: rgba(128, 128, 128, 0.5);
+      border-radius: 10px;
+   }
    .box {
       display: flex;
       align-items: center;
